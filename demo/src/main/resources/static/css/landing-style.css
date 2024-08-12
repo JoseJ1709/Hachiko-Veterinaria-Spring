@@ -1,0 +1,97 @@
+.welcomeSection{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(224,224,216);
+    background: linear-gradient(180deg, rgba(224,224,216,1) 0%, rgba(147,194,226,1) 100%); 
+}
+#welcomeContent{
+    z-index: 2;
+    display: block;
+}
+#welcomeContent h1{
+    color: #2C3E50;
+    font-size: 80px;
+}
+
+#welcomeContent ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#welcomeContent ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cloud1-content{
+    position: absolute;
+    z-index: 1;
+    right: 40px;
+}
+#cloud1-content img{
+    width: 600px;
+}
+
+
+.aboutUsSection{
+    background: rgb(94,171,222);
+    background: linear-gradient(180deg, rgba(94,171,222,1) 0%, rgba(74,144,226,1) 100%); 
+}
+
+.aboutUsCardsContainer{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.aboutUsCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+}
+
+.bottom-card{
+
+    bottom: 20px;
+}
+
+/* our services section */
+
+.ourServicesSection{
+    background: rgb(74,144,226);
+    background: linear-gradient(180deg, rgba(74,144,226,1) 0%, rgba(176,212,255,1) 100%); 
+}
+
+/* statistics section */
+
+.statisticsSection{
+    background: rgb(176,212,255);
+    background: linear-gradient(180deg, rgba(176,212,255,1) 0%, rgba(214,233,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.statistics{
+    display: flex;
+    align-items: center;
+    background-color: #2C3E50;
+    width: 100%;
+}
+
+
+
+/* testimonials section */
+
+.testimonialsSection{
+    background: rgb(214,233,255);
+    background: linear-gradient(180deg, rgba(214,233,255,1) 0%, rgba(214,233,255,0) 100%); 
+}
