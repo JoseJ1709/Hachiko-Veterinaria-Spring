@@ -10,5 +10,4 @@ public class PageController {
     public String PageWeb(Model model){
         return "index";
     }
-
 }

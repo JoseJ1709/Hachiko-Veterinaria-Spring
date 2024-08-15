@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(0deg,   
+    rgba(94,171,222,1) 33%, 
+    rgba(74,144,226,1) 66%, 
+    rgba(176,212,255,1) 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+.trees{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+    pointer-events: none;
+}
+#dog{
+    position: absolute;
+    margin-top: 65px;
+    right: 0;
+    margin-right: 400px;
+}
+#tree1{ 
+    position: absolute;
+    margin-top: 450px;
+}
+#tree2{
+    position: absolute;
+    margin-top: 450px;
+    right: 0;
+}
+#container{
+    display: flex;
+    gap: 20px;
+}
+#img-container img{
+    width: 400px;
+    border-radius: 30px;
+}
+.data-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#data-container{
+    
+}
+#names{
+    display: flex;
+    gap: 60px;
+}
+#info-container{
+    display: flex;
+    gap: 20px;
+}
+
+.owner, .pet-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    background: #ffffffb0;
+    padding: 1px 30px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 26px;
+}
+.info, .treatments {
+    background: #ffffffb0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+.treatments h3 {
+    color: red;
+}
+.info p, .treatments p {
+    margin: 10px 0;
+}

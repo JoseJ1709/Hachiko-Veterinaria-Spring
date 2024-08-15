@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascota</title>
+    <link rel="stylesheet" href="/css/tabla/css/mascota.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="trees">
+        <img id="tree1" src="/css/tabla/img/tree.png">
+        <img id="tree2" src="/css/tabla/img/tree2.png">
+        <img id="dog" src="/css/tabla/img/dog2.png">
+    </div>
+    <div id="container">
+        <div id="img-container">
+            <img th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})}">
+        </div>
+        <div id="data-container">
+            <div id="names">
+                <div class="owner">Dueño: <span th:text="${mascota.dueño}"></span></div>
+                <div class="pet-name">Nombre: <span th:text="${mascota.nombre}"></span></div>
+            </div>
+            <div id="info-container">
+                <div class="info">
+                    <p>Raza: <span th:text="${mascota.raza}"></span></p>
+                    <p>Edad: <span th:text="${mascota.edad}"></span> años</p>
+                    <p>Peso: <span th:text="${mascota.peso}"></span> Kg</p>
+                    <p>Enfermedad: <span th:text="${mascota.enfermedad}"></span></p>
+                    <p>Estado: <span th:text="${mascota.estado ? 'Activo' : 'Inactivo'}"></span></p>
+                </div>
+                <div class="treatments">
+                    <h3>Tratamientos</h3>
+                    <p th:text="${mascota.tratamientos}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
