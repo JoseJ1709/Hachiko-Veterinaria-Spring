@@ -64,7 +64,10 @@
             </thead>
             <tbody>
             <tr th:each="mascota : ${mascotas}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''">
-                <td th:text="${mascota.nombre}"></td>
+
+                <td>
+                    <a th:href="@{/mascotas/find/{id}(id=${mascota.id})}" th:text="${mascota.nombre}"></a>
+                </td>
                 <td th:text="${mascota.raza}"></td>
                 <td> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})}"></td>
                 <td th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>

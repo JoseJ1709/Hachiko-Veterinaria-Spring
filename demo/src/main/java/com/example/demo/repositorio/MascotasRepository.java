@@ -24,4 +24,21 @@ public class MascotasRepository {
     public Collection<Mascota> findAll(){
         return data.values();
     }
+
+    //metodos
+    public void deleteById(int id){
+        data.remove(id);
+    }
+
+    public void update(Student student){
+        data.put(Student.getId(), Student);
+    }
+
+    public void add(Student student){
+        int tam = data.size();
+        int lastId = data.getId();
+        student.setId(lastId+1);
+        data.put(student.getId, student);
+        
+    }
 }
