@@ -10,6 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+    <nav>
+        <div id="img">
+            <img id="logo-container" src="/css/tabla/img/logo.jpeg">
+        </div>
+        <ul id="menu">
+            <li><a href="#welcomeContent">Lista Mascotas</a></li>
+            <li><a href="#aboutUsCardsContainer">Lista de Clientes</a></li>
+        </ul>
+        <div id="buttons">
+            <button id="salir-button">salir</button>
+        </div>
+    </nav>
+</header>
 <main>
     <div id="clouds">
         <div id="clouds-up">
@@ -44,6 +58,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Raza</th>
+                <th>Imagen</th>
                 <th>Activo</th>
             </tr>
             </thead>
@@ -51,6 +66,7 @@
             <tr th:each="mascota : ${mascotas}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''">
                 <td th:text="${mascota.nombre}"></td>
                 <td th:text="${mascota.raza}"></td>
+                <td> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})}"></td>
                 <td th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>
             </tr>
             </tbody>
