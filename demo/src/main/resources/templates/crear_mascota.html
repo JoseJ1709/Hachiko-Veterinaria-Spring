@@ -53,7 +53,13 @@
             </div>
             <div>
                 <label for="dueno">Dueño:</label>
-                <input th:field="*{dueño}" type="text" id="dueno" name="dueno">
+                <select th:field="*{dueño}" id="dueno" name="dueno">
+                    <option value="" disabled selected>Seleccione un dueño</option>
+                    <option th:each="cliente : ${clientes}"
+                            th:value="${cliente.id}"
+                            th:text="${cliente.nombre}">
+                    </option>
+                </select>
             </div>
             <div>
                 <label for="foto">Foto:</label>

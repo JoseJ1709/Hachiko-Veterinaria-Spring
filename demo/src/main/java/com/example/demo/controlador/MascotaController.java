@@ -1,6 +1,7 @@
 package com.example.demo.controlador;
 
 import com.example.demo.entidades.Mascota;
+import com.example.demo.repositorio.ClientesRepository;
 import com.example.demo.servicio.MascotaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class MascotaController {
     @Autowired
     MascotaService mascotaService;
+
+    @Autowired
+    ClientesRepository clientesRepository;
 
     @GetMapping("/all")
     public String allMascotas(Model model){
@@ -27,12 +31,15 @@ public class MascotaController {
     public String registrarMascota(Model model){
         Mascota mascota = new Mascota("","","",0,0,"",true,0,"");
         model.addAttribute("mascota", mascota);
+        model.addAttribute("clientes", clientesRepository.findAll());
 
         return "crear_mascota";
     }
     @PostMapping("/agregar")
     public String agregarMascota(@ModelAttribute("mascota") Mascota mascota){
-        mascotaService.add(mascota);
+        String dueno = mascota.getDueño();
+        Long idCliente = Long.parseLong(dueno);
+        mascotaService.add(mascota,idCliente);
         return "redirect:/mascota/all";
     }
     @GetMapping("/eliminar/{id}")
@@ -43,11 +50,14 @@ public class MascotaController {
     @GetMapping("/editar/{id}")
     public String editarMascota(Model model,@PathVariable("id") Long identificacion){
         model.addAttribute("mascota",  mascotaService.findById(identificacion));
+        model.addAttribute("clientes", clientesRepository.findAll());
         return "editar_mascota";
     }
     @PostMapping("/editar/{id}")
     public String editarMascota(@PathVariable("id") int identificacion, @ModelAttribute("mascota") Mascota mascota){
-        mascotaService.update(mascota);
+        String dueno = mascota.getDueño();
+        Long idCliente = Long.parseLong(dueno);
+        mascotaService.update(mascota,idCliente);
         return "redirect:/mascota/all";
     }
 }
