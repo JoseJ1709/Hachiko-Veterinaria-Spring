@@ -1,7 +1,10 @@
 package com.example.demo.entidades;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "mascotas")
 public class Mascota {
-    private int id;
     private String dueño;
     private String nombre;
     private String raza;
@@ -12,7 +15,14 @@ public class Mascota {
     private int tratamientos;
     private String imagen;
 
-    public Mascota(int id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    private Cliente cliente;
+
+    public Mascota(Long id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
         this.id = id;
         this.dueño = dueño;
         this.nombre = nombre;
@@ -24,10 +34,25 @@ public class Mascota {
         this.tratamientos = tratamientos;
         this.imagen = imagen;
     }
-    public int getId() {
+
+    public Mascota() {
+    }
+    public Mascota(String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
+
+        this.dueño = dueño;
+        this.nombre = nombre;
+        this.raza = raza;
+        this.edad = edad;
+        this.peso = peso;
+        this.enfermedad = enfermedad;
+        this.estado = estado;
+        this.tratamientos = tratamientos;
+        this.imagen = imagen;
+    }
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getDueño() {
@@ -88,5 +113,13 @@ public class Mascota {
     }
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

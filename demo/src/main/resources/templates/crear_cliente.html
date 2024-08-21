@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link  rel="stylesheet" href="/css/Form/crear_mascota.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <div id="img">
+            <img id="logo-container" src="/css/Form/img/logo.jpeg">
+        </div>
+        <ul id="menu">
+            <li><a href="/mascota/all">Lista Mascotas</a></li>
+            <li><a href="/cliente/all">Lista de Clientes</a></li>
+        </ul>
+        <div id="buttons">
+            <button id="salir-button">salir</button>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="clouds">
+        <img id="centro1" src="/css/Form/img/centro1.png">
+        <img id="centro2" src="/css/Form/img/centro2.png">
+        <img id="rocket" src="/css/Form/img/rocket.png">
+    </div>
+    <div id="forms">
+        <h1 id="registrar">Registrar</h1>
+
+        <form th:object="${cliente}" th:action="@{/cliente/agregar}" method="post" >
+            <h2>Información Cliente</h2>
+            <input type="hidden" th:field="*{id}">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input th:field="*{nombre}" type="text" id="nombre" name="nombre">
+            </div>
+            <div>
+                <label for="cedula">Cedula:</label>
+                <input th:field="*{cedula}" type="text" id="cedula" name="cedula">
+            </div>
+            <div>
+                <label for="correo">Correo:</label>
+                <input th:field="*{correo}" type="email" id="correo" name="correo">
+            </div>
+            <div>
+                <label for="celular">Celular:</label>
+                <input th:field="*{celular}" type="number" id="celular" name="celular">
+            </div>
+            <div class="button-registrar">
+                <button id="button-registrar" type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
