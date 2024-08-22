@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotas</title>
+    <title>Clientes</title>
     <link rel="stylesheet" href="/css/tabla/css/mascotas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,39 +54,28 @@
     <div class="container">
         <div id="register-container">
             <h1>Perros registrados</h1>
-            <button id="button-registrar" onclick="location.href='/mascota/registrar'">Registrar</button>
+            <button id="button-registrar" onclick="location.href='/cliente/registrar'">Registrar</button>
         </div>
         <table>
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Raza</th>
-                <th>Imagen</th>
-                <th>Estado</th>
+                <th>Cedula</th>
+                <th>Correo</th>
+                <th>Celular</th>
                 <th>Accciones</th>
             </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
-            <tr th:each="mascota : ${mascotas}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''">
-
+            <tr th:each="cliente : ${clientes}" >
+                <td th:text="${cliente.nombre}" ></td>
+                <td th:text="${cliente.cedula}" ></td>
+                <td th:text="${cliente.correo}" ></td>
+                <td th:text="${cliente.celular}" ></td>
                 <td>
-                    <a th:href="@{/mascotas/find/{id}(id=${mascota.id})}" th:text="${mascota.nombre}"></a>
+                    <a id="editar" th:href="@{/cliente/editar/{id}(id=${cliente.id})}">editar</a>
+                    <a id="eliminar" th:href="@{/cliente/eliminar/{id}(id=${cliente.id})}">eliminar</a>
                 </td>
-                <td th:text="${mascota.raza}"></td>
-                <td> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})}"></td>
-                <td th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>
-=======
-            <tr th:each="mascota : ${mascotas}" >
-                <td th:text="${mascota.nombre}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"></td>
-                <td th:text="${mascota.raza}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"></td>
-                <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})} "></td>
-                <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''" th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>
-                <td>
-                    <a id="editar" th:href="@{/mascota/editar/{id}(id=${mascota.id})}">editar</a>
-                    <a id="eliminar" th:href="@{/mascota/eliminar/{id}(id=${mascota.id})}">eliminar</a>
-                </td>
->>>>>>> fb36fbfb94ff087d679864ef87cc01c2fda56523
             </tr>
             </tbody>
         </table>

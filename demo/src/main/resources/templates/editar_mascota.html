@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link  rel="stylesheet" href="/css/Form/crear_mascota.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <div id="img">
+            <img id="logo-container" src="/css/Form/img/logo.jpeg">
+        </div>
+        <ul id="menu">
+            <li><a href="/mascota/all">Lista Mascotas</a></li>
+            <li><a href="/cliente/all">Lista de Clientes</a></li>
+        </ul>
+        <div id="buttons">
+            <button id="salir-button">salir</button>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="clouds">
+        <img id="centro1" src="/css/Form/img/centro1.png">
+        <img id="centro2" src="/css/Form/img/centro2.png">
+        <img id="rocket" src="/css/Form/img/rocket.png">
+    </div>
+    <div id="forms">
+        <h1 id="registrar">Registrar</h1>
+        <form th:object="${mascota}" th:action="@{/mascota/editar/{id}(id=${mascota.id})}" method="post" >
+            <h2>Información Mascota</h2>
+            <input type="hidden" th:field="*{id}">
+            <div>
+                <label for="nombre_mascota">Nombre:</label>
+                <input th:field="*{nombre}" type="text" id="nombre_mascota" name="nombre">
+            </div>
+            <div>
+                <label for="raza">Raza:</label>
+                <input th:field="*{raza}" type="text" id="raza" name="raza">
+            </div>
+            <div>
+                <label for="peso">Peso (kg):</label>
+                <input th:field="*{peso}" type="number" id="peso" name="peso">
+            </div>
+            <div>
+                <label for="edad">Edad (años):</label>
+                <input th:field="*{edad}" type="number" id="edad" name="edad">
+            </div>
+            <div>
+                <label for="dueno">Dueño:</label>
+                <select th:field="*{dueño}" id="dueno" name="dueno">
+                    <option value="" disabled selected>Seleccione un dueño</option>
+                    <option th:each="cliente : ${clientes}"
+                            th:value="${cliente.id}"
+                            th:text="${cliente.nombre}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label for="foto">Foto:</label>
+                <input th:field="*{imagen}" type="text" id="foto" name="foto" accept="image/*">
+            </div>
+            <div>
+                <label for="enfermedad">Enfermedad:</label>
+                <input th:field="*{enfermedad}" type="text" id="enfermedad" name="enfermedad">
+            </div>
+            <div>
+                <label for="estado">Estado:</label>
+                <input th:field="*{estado}" type="checkbox" id="estado" name="estado">
+            </div>
+            <div>
+                <label for="tratamiento">Tratamiento:</label>
+                <input th:field="*{tratamientos}" type="text" id="tratamiento" name="tratamiento">
+            </div>
+            <div class="button-registrar">
+                <button id="button-registrar-mascota" type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

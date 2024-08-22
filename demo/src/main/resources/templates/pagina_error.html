@@ -11,6 +11,38 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>La mascota que busca no existe</h1>
+
+    <header>
+        <nav>
+            <div id="logo-container">
+            <img id="logo" src="/img/Logo.jpeg" alt="logo"> 
+            <h2>HACHIKO-VET</h2>
+            </div>
+            <ul id="menu"> <!-- Menu -->
+                <li><a href="#welcomeContent">Home</a></li>
+                <li><a href="#aboutUsCardsContainer">Nosotros</a></li>
+                <li><a href="#clouds-container">Servicios</a></li>
+            </ul>
+            <button id="book-now">
+                <img id="logo-message" src="/img/message-circle.png" alt="message-circle"> <!-- Icono -->
+                Escribenos
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="error-section">
+
+            <h1>La mascota que busca n o existe</h1>
+            <h2 th:text="'Id = ' + ${id}"></h2>
+
+            <div class="dog-content">
+                <img src="/img/dog.png" alt="dog">
+            </div>
+        </section>
+        
+    </main>
+
 </body>
 </html>
