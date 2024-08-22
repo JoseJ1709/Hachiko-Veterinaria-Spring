@@ -16,7 +16,8 @@
             <img id="logo-container" src="/css/tabla/img/logo.jpeg">
         </div>
         <ul id="menu">
-            <li><a href="/">Dashboard</a></li>
+            <li><a href="/">Dasboard</a></li>
+            <li><a href="/cliente/login">Login</a></li>
         </ul>
         <div id="buttons">
             <button id="salir-button" onclick="location.href='/'">salir</button>
@@ -52,7 +53,7 @@
     </div>
     <div class="container">
         <div id="register-container">
-            <h1>Perros registrados</h1>
+            <h1>Tus mascotas <span th:text="${cliente.nombre}"></span> </h1>
             <button id="button-registrar" onclick="location.href='/mascota/registrar'">Registrar</button>
         </div>
         <table>

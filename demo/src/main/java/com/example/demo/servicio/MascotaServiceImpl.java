@@ -27,22 +27,6 @@ public class MascotaServiceImpl implements MascotaService{
         return mascotasRepository.findAll();
     }
 
-    @Override
-<<<<<<< HEAD
-    public void deleteById(int id){
-        repo.deleteById(id);
-    }
-
-    @Override
-    public void update(Student student){
-        repo.update(student);
-    }
-
-    @Override
-    public void add(Student student){
-        repo.add(student);
-    }
-=======
     public void deleteById(Long id) {
         mascotasRepository.deleteById(id);
     }
@@ -64,6 +48,4 @@ public class MascotaServiceImpl implements MascotaService{
         mascota.setDueño(nomCliente);
         mascotasRepository.save(mascota);
     }
-
->>>>>>> fb36fbfb94ff087d679864ef87cc01c2fda56523
 }

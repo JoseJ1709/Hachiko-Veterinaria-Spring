@@ -15,8 +15,15 @@ header nav{
     display: flex;
     justify-content: space-between;
 }
-#menu{
-    margin-right: 280px;
+#menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+#menu > * {
+    flex-shrink: 1; /* Permite que los elementos se reduzcan en tamaño si es necesario */
+    min-width: 0; /* Evita que los elementos se desborden horizontalmente */
 }
 header nav ul{
     display: flex;
