@@ -1,0 +1,116 @@
+body {
+    background: linear-gradient(
+            0deg,
+            #4A90E2 33%,
+            #93C2E2 60%,
+            #E0E0D8 90%,
+            #E0E0D8 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+main{
+}
+header nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#img{
+
+}
+#logo-container{
+    width: 80px;
+    border-radius: 30px;
+}
+#salir-button{
+    background-color: transparent;
+    width: 120px;
+    height: 45px;
+    border: 2px solid black;
+    color: black;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 22px;
+}
+
+#menu{
+    margin-left: 100px;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li{
+    font-size: 30px;
+    margin-left: 25px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #2C3E50;
+    font-weight: 500;
+}
+#title{
+    font-size: 90px;
+    color: red;
+    width: 700px;
+    text-align: center;
+    margin-top: 100px;
+}
+#attention {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+    pointer-events: none;
+}
+#atention2{
+    position: absolute;
+    width: 700px;
+    margin-top: 130px;
+}
+#atention3{
+    position: absolute;
+    right: 0;
+    margin-right: 200px;
+    margin-top: 180px;
+}
+#atention4{
+    position: absolute;
+    width: 14%;
+    margin-left: 400px;
+}
+#atention5{
+    position: absolute;
+    width: 9%;
+    right: 0;
+    margin-right: 500px;
+}

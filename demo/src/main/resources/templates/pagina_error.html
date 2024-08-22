@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/error/pagina_error.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,37 +11,32 @@
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div id="logo-container">
-            <img id="logo" src="/img/Logo.jpeg" alt="logo"> 
-            <h2>HACHIKO-VET</h2>
-            </div>
-            <ul id="menu"> <!-- Menu -->
-                <li><a href="#welcomeContent">Home</a></li>
-                <li><a href="#aboutUsCardsContainer">Nosotros</a></li>
-                <li><a href="#clouds-container">Servicios</a></li>
-            </ul>
-            <button id="book-now">
-                <img id="logo-message" src="/img/message-circle.png" alt="message-circle"> <!-- Icono -->
-                Escribenos
-            </button>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div id="img">
+            <img id="logo-container" src="/css/Form/img/logo.jpeg">
+        </div>
+        <ul id="menu">
+            <li><a href="/">Dashboard</a></li>
+        </ul>
+        <div id="buttons">
+            <button id="salir-button" onclick="location.href='/'">salir</button>
+        </div>
+    </nav>
+</header>
 
-    <main>
+<main>
+    <div id="attention">
+        <img id="atention2" src="/css/error/img/Atention2.png">
+        <img id="atention3" src="/css/error/img/Atention3.png">
+        <img id="atention4" src="/css/error/img/Atention4.png">
+        <img id="atention5" src="/css/error/img/Atention5.png">
+    </div>
+    <section class="error-section">
+        <h1 id="title">La mascota no existe</h1>
+    </section>
 
-        <section class="error-section">
-
-            <h1>La mascota que busca n o existe</h1>
-            <h2 th:text="'Id = ' + ${id}"></h2>
-
-            <div class="dog-content">
-                <img src="/img/dog.png" alt="dog">
-            </div>
-        </section>
-        
-    </main>
+</main>
 
 </body>
 </html>
