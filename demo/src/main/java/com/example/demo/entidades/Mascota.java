@@ -1,6 +1,10 @@
 package com.example.demo.entidades;
 
 import jakarta.persistence.*;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.JoinColumn;
+
+import java.util.List;
 
 @Entity
 @Table(name = "mascotas")
@@ -21,6 +25,10 @@ public class Mascota {
 
     @ManyToOne
     private Cliente cliente;
+
+
+    @OneToMany(mappedBy = "mascota")
+    private List<Tratamiento> tratamientosList;
 
     public Mascota(Long id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
         this.id = id;

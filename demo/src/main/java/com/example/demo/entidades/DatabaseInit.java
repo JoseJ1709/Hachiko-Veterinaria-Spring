@@ -1,12 +1,13 @@
 package com.example.demo.entidades;
 
-import com.example.demo.repositorio.ClientesRepository;
-import com.example.demo.repositorio.MascotasRepository;
+import com.example.demo.repositorio.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
+
+import java.sql.Date;
 
 @Controller
 @Transactional
@@ -18,8 +19,58 @@ public class DatabaseInit implements ApplicationRunner {
     @Autowired
     ClientesRepository clientesRepository;
 
+    @Autowired
+    VeterinariosRepository veterinariosRepository;
+
+    @Autowired
+    DrogasRepository drogasRepository;
+
+    @Autowired
+    TratamientosRepository tratamientosRepository;
+
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+
+        Veterinario vet1 = new Veterinario("Dr. Smith", "123456", "password1", "Cardiología", "foto1.jpg", 0);
+        Veterinario vet2 = new Veterinario("Dr. Johnson", "123457", "password2", "Dermatología", "foto2.jpg", 0);
+        Veterinario vet3 = new Veterinario("Dr. Williams", "123458", "password3", "Neurología", "foto3.jpg", 0);
+        Veterinario vet4 = new Veterinario("Dr. Brown", "123459", "password4", "Oncología", "foto4.jpg", 0);
+        Veterinario vet5 = new Veterinario("Dr. Jones", "123460", "password5", "Pediatría", "foto5.jpg", 0);
+        Veterinario vet6 = new Veterinario("Dr. Garcia", "123461", "password6", "Cirugía", "foto6.jpg", 0);
+        Veterinario vet7 = new Veterinario("Dr. Martinez", "123462", "password7", "Oftalmología", "foto7.jpg", 0);
+        Veterinario vet8 = new Veterinario("Dr. Rodriguez", "123463", "password8", "Geriatría", "foto8.jpg", 0);
+        Veterinario vet9 = new Veterinario("Dr. Hernandez", "123464", "password9", "Endocrinología", "foto9.jpg", 0);
+        Veterinario vet10 = new Veterinario("Dr. Lopez", "123465", "password10", "Nefrología", "foto10.jpg", 0);
+
+
+        vet1 = veterinariosRepository.save(vet1);
+        vet2 = veterinariosRepository.save(vet2);
+        vet3 = veterinariosRepository.save(vet3);
+        vet4 = veterinariosRepository.save(vet4);
+        vet5 = veterinariosRepository.save(vet5);
+        vet6 = veterinariosRepository.save(vet6);
+        vet7 = veterinariosRepository.save(vet7);
+        vet8 = veterinariosRepository.save(vet8);
+        vet9 = veterinariosRepository.save(vet9);
+        vet10 = veterinariosRepository.save(vet10);
+
+
+        Droga droga1 = new Droga("Droga A", 100, 150, 50, 0);
+        Droga droga2 = new Droga("Droga B", 200, 250, 30, 0);
+        Droga droga3 = new Droga("Droga C", 300, 350, 20, 0);
+        Droga droga4 = new Droga("Droga D", 400, 450, 10, 0);
+        Droga droga5 = new Droga("Droga E", 500, 550, 5, 0);
+
+        droga1 = drogasRepository.save(droga1);
+        droga2 = drogasRepository.save(droga2);
+        droga3 = drogasRepository.save(droga3);
+        droga4 = drogasRepository.save(droga4);
+        droga5 = drogasRepository.save(droga5);
+
+
+
         Cliente clienteJuan = clientesRepository.save(new Cliente(1023242547, "Juan", "juan@gmail.com", 310254334));
         Cliente clientePedro = clientesRepository.save(new Cliente(1023242548, "Pedro", "pedro@gmail.com", 310254335));
         Cliente clienteMaria = clientesRepository.save(new Cliente(1023242549, "Maria", "maria@gmail.com", 310254336));
@@ -471,6 +522,66 @@ public class DatabaseInit implements ApplicationRunner {
         mascota100.setCliente(clienteScarlett);
         mascotasRepository.save(mascota100);
 
+        // Crear 10 tratamientos, cada uno con un veterinario, una droga y una mascota
+        Tratamiento tratamiento1 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento1.setVeterinario(vet1);
+        tratamiento1.setDroga(droga1);
+        tratamiento1.setMascota(mascota1);
+        tratamientosRepository.save(tratamiento1);
+
+        Tratamiento tratamiento2 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento2.setVeterinario(vet2);
+        tratamiento2.setDroga(droga2);
+        tratamiento2.setMascota(mascota2);
+        tratamientosRepository.save(tratamiento2);
+
+        Tratamiento tratamiento3 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento3.setVeterinario(vet3);
+        tratamiento3.setDroga(droga3);
+        tratamiento3.setMascota(mascota3);
+        tratamientosRepository.save(tratamiento3);
+
+        Tratamiento tratamiento4 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento4.setVeterinario(vet4);
+        tratamiento4.setDroga(droga4);
+        tratamiento4.setMascota(mascota4);
+        tratamientosRepository.save(tratamiento4);
+
+        Tratamiento tratamiento5 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento5.setVeterinario(vet5);
+        tratamiento5.setDroga(droga5);
+        tratamiento5.setMascota(mascota5);
+        tratamientosRepository.save(tratamiento5);
+
+        Tratamiento tratamiento6 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento6.setVeterinario(vet6);
+        tratamiento6.setDroga(droga1);
+        tratamiento6.setMascota(mascota6);
+        tratamientosRepository.save(tratamiento6);
+
+        Tratamiento tratamiento7 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento7.setVeterinario(vet7);
+        tratamiento7.setDroga(droga2);
+        tratamiento7.setMascota(mascota7);
+        tratamientosRepository.save(tratamiento7);
+
+        Tratamiento tratamiento8 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento8.setVeterinario(vet8);
+        tratamiento8.setDroga(droga3);
+        tratamiento8.setMascota(mascota8);
+        tratamientosRepository.save(tratamiento8);
+
+        Tratamiento tratamiento9 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento9.setVeterinario(vet9);
+        tratamiento9.setDroga(droga4);
+        tratamiento9.setMascota(mascota9);
+        tratamientosRepository.save(tratamiento9);
+
+        Tratamiento tratamiento10 = new Tratamiento(new Date(System.currentTimeMillis()));
+        tratamiento10.setVeterinario(vet10);
+        tratamiento10.setDroga(droga5);
+        tratamiento10.setMascota(mascota10);
+        tratamientosRepository.save(tratamiento10);
 
     }
 
