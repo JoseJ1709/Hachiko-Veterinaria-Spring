@@ -13,4 +13,5 @@ import java.util.Map;
 public interface ClientesRepository extends JpaRepository<Cliente, Long> {
     // select * from clientes where cedula = cedula
     Cliente findByCedula(int cedula);
+
 }

@@ -16,7 +16,6 @@ public class Mascota {
     private int peso;
     private String enfermedad;
     private boolean estado;
-    private int tratamientos;
     private String imagen;
 
     @Id
@@ -27,10 +26,10 @@ public class Mascota {
     private Cliente cliente;
 
 
-    @OneToMany(mappedBy = "mascota")
+    @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tratamiento> tratamientosList;
 
-    public Mascota(Long id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
+    public Mascota(Long id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
         this.id = id;
         this.dueño = dueño;
         this.nombre = nombre;
@@ -39,13 +38,12 @@ public class Mascota {
         this.peso = peso;
         this.enfermedad = enfermedad;
         this.estado = estado;
-        this.tratamientos = tratamientos;
         this.imagen = imagen;
     }
 
     public Mascota() {
     }
-    public Mascota(String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, int tratamientos, String imagen) {
+    public Mascota(String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
 
         this.dueño = dueño;
         this.nombre = nombre;
@@ -54,7 +52,6 @@ public class Mascota {
         this.peso = peso;
         this.enfermedad = enfermedad;
         this.estado = estado;
-        this.tratamientos = tratamientos;
         this.imagen = imagen;
     }
     public Long getId() {
@@ -109,13 +106,6 @@ public class Mascota {
         this.estado = estado;
     }
 
-    public int getTratamientos() {
-        return tratamientos;
-    }
-
-    public void setTratamientos(int tratamientos) {
-        this.tratamientos = tratamientos;
-    }
     public String getImagen() {
         return imagen;
     }

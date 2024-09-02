@@ -2,8 +2,10 @@ package com.example.demo.servicio;
 
 import com.example.demo.entidades.Cliente;
 import com.example.demo.repositorio.ClientesRepository;
+import com.example.demo.repositorio.MascotasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
@@ -21,9 +23,13 @@ public class ClienteServiceImpl implements ClienteService {
     public Collection<Cliente> findAll() {
         return clientesRepository.findAll();
     }
+    @Autowired
+    private MascotasRepository mascotasRepository;
 
     @Override
+    @Transactional
     public void deleteById(Long id) {
+        mascotasRepository.deleteByClienteId(id);
         clientesRepository.deleteById(id);
     }
 

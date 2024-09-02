@@ -6,13 +6,25 @@ import com.example.demo.entidades.Cliente;
 import com.example.demo.repositorio.ClientesRepository;
 import com.example.demo.repositorio.MascotasRepository;
 import com.example.demo.entidades.Mascota;
+import com.example.demo.repositorio.TratamientosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MascotaServiceImpl implements MascotaService{
     @Autowired
     private MascotasRepository mascotasRepository;
+
+    @Autowired
+    private TratamientosRepository tratamientosRepository;
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        tratamientosRepository.deleteByMascotaId(id);
+        mascotasRepository.deleteById(id);
+    }
 
     @Autowired
     private ClientesRepository clientesRepository;
@@ -27,9 +39,6 @@ public class MascotaServiceImpl implements MascotaService{
         return mascotasRepository.findAll();
     }
 
-    public void deleteById(Long id) {
-        mascotasRepository.deleteById(id);
-    }
 
     @Override
     public void update(Mascota mascota, Long idCliente) {

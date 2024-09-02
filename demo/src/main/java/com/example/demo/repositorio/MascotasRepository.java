@@ -12,4 +12,6 @@ import com.example.demo.entidades.Mascota;
 public interface MascotasRepository extends JpaRepository<Mascota, Long> {
     // select * from mascotas where id_cliente = idCliente
     public Collection<Mascota> findByCliente_Id(Long idCliente);
+    // delete from mascotas where id_cliente = idCliente
+    public void deleteByClienteId(Long idCliente);
 }

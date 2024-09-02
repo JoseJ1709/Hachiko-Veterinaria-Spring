@@ -63,7 +63,6 @@
                 <th>Raza</th>
                 <th>Imagen</th>
                 <th>Estado</th>
-                <th>Accciones</th>
             </tr>
             </thead>
             <tbody>
@@ -72,10 +71,7 @@
                 <td th:text="${mascota.raza}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"></td>
                 <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})} "></td>
                 <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''" th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>
-                <td>
-                    <a id="editar" th:href="@{/mascota/editar/{id}(id=${mascota.id})}">editar</a>
-                    <a id="eliminar" th:href="@{/mascota/eliminar/{id}(id=${mascota.id})}">eliminar</a>
-                </td>
+
             </tr>
             </tbody>
         </table>

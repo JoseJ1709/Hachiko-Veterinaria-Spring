@@ -29,7 +29,7 @@ public class MascotaController {
     }
     @GetMapping("/registrar")
     public String registrarMascota(Model model){
-        Mascota mascota = new Mascota("","","",0,0,"",true,0,"");
+        Mascota mascota = new Mascota("","","",0,0,"",true,"");
         model.addAttribute("mascota", mascota);
         model.addAttribute("clientes", clientesRepository.findAll());
 
@@ -58,6 +58,6 @@ public class MascotaController {
         String dueno = mascota.getDueño();
         Long idCliente = Long.parseLong(dueno);
         mascotaService.update(mascota,idCliente);
-        return "redirect:/mascota/all";
+        return "/mascota/all";
     }
 }

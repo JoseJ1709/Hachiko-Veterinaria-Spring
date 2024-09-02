@@ -17,8 +17,8 @@ public class Cliente {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<Mascota> mascotas = new ArrayList<>();
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mascota> mascotasList;
 
     public Cliente() {
     }
@@ -78,11 +78,11 @@ public class Cliente {
         this.celular = celular;
     }
 
-    public List<Mascota> getMascotas() {
-        return mascotas;
+    public List<Mascota> getMascotasList() {
+        return mascotasList;
     }
 
-    public void setMascotas(List<Mascota> mascotas) {
-        this.mascotas = mascotas;
+    public void setMascotasList(List<Mascota> mascotasList) {
+        this.mascotasList = mascotasList;
     }
 }
