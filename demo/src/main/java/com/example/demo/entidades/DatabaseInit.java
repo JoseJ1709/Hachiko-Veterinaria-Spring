@@ -136,405 +136,407 @@ public class DatabaseInit implements ApplicationRunner {
         Cliente clienteDaniel = clientesRepository.save(new Cliente(1023242595, "Daniel", "daniel@gmail.com", 310254382));
         Cliente clienteScarlett = clientesRepository.save(new Cliente(1023242596, "Scarlett", "scarlett@gmail.com", 310254383));
 
-        Mascota mascota1 = new Mascota(clienteJuan.getNombre(), "Firulais", "Pastor Aleman", 5, 20, "Ning", true,"dog1.jpg");
+        Mascota mascota1 = new Mascota("Firulais", "Pastor Aleman", 5, 20, "Ning", true,"dog1.jpg");
         mascota1.setCliente(clienteJuan);
         mascotasRepository.save(mascota1);
 
-        Mascota mascota2 = new Mascota(clientePedro.getNombre(), "Rex", "Bulldog", 3, 15, "Ning", true,"dog2.jpg");
+        Mascota mascota2 = new Mascota( "Rex", "Bulldog", 3, 15, "Ning", true,"dog2.jpg");
         mascota2.setCliente(clientePedro);
         mascotasRepository.save(mascota2);
 
-        Mascota mascota3 = new Mascota(clienteMaria.getNombre(), "Luna", "Poodle", 2, 10, "Ning", true,"dog3.jpg");
+        Mascota mascota3 = new Mascota("Luna", "Poodle", 2, 10, "Ning", true,"dog3.jpg");
         mascota3.setCliente(clienteMaria);
         mascotasRepository.save(mascota3);
 
-        Mascota mascota4 = new Mascota(clienteAna.getNombre(), "Toby", "Labrador", 4, 25, "Ning", true,"dog4.jpg");
+        Mascota mascota4 = new Mascota("Toby", "Labrador", 4, 25, "Ning", true,"dog4.jpg");
         mascota4.setCliente(clienteAna);
         mascotasRepository.save(mascota4);
 
-        Mascota mascota5 = new Mascota(clienteJose.getNombre(), "Max", "Golden Retriever", 6, 30, "Ning", true,"dog5.jpg");
+        Mascota mascota5 = new Mascota("Max", "Golden Retriever", 6, 30, "Ning", true,"dog5.jpg");
         mascota5.setCliente(clienteJose);
         mascotasRepository.save(mascota5);
 
-        Mascota mascota6 = new Mascota(clienteCarlos.getNombre(), "Chispa", "Beagle", 4, 12, "Ning", true,"dog6.jpg");
+        Mascota mascota6 = new Mascota( "Chispa", "Beagle", 4, 12, "Ning", true,"dog6.jpg");
         mascota6.setCliente(clienteCarlos);
         mascotasRepository.save(mascota6);
 
-        Mascota mascota7 = new Mascota(clienteLuis.getNombre(), "Bella", "Chihuahua", 2, 3, "Ning", true,"dog7.jpg");
+        Mascota mascota7 = new Mascota( "Bella", "Chihuahua", 2, 3, "Ning", true,"dog7.jpg");
         mascota7.setCliente(clienteLuis);
         mascotasRepository.save(mascota7);
 
-        Mascota mascota8 = new Mascota(clienteDiana.getNombre(), "Rocky", "Boxer", 5, 22, "Ning", true,"dog8.jpg");
+        Mascota mascota8 = new Mascota("Rocky", "Boxer", 5, 22, "Ning", true,"dog8.jpg");
         mascota8.setCliente(clienteDiana);
         mascotasRepository.save(mascota8);
 
-        Mascota mascota9 = new Mascota(clienteLaura.getNombre(), "Nina", "Cocker Spaniel", 3, 10, "Ning", true,"dog9.jpg");
+        Mascota mascota9 = new Mascota("Nina", "Cocker Spaniel", 3, 10, "Ning", true,"dog9.jpg");
         mascota9.setCliente(clienteLaura);
         mascotasRepository.save(mascota9);
 
-        Mascota mascota10 = new Mascota(clienteMiguel.getNombre(), "Simba", "Shih Tzu", 4, 8, "Ning", true,"dog10.jpg");
+        Mascota mascota10 = new Mascota("Simba", "Shih Tzu", 4, 8, "Ning", true,"dog10.jpg");
         mascota10.setCliente(clienteMiguel);
         mascotasRepository.save(mascota10);
 
-        Mascota mascota11 = new Mascota(clienteAndres.getNombre(), "Bruno", "Dálmata", 6, 25, "Ning", true,"dog11.jpg");
+        Mascota mascota11 = new Mascota("Bruno", "Dálmata", 6, 25, "Ning", true,"dog11.jpg");
         mascota11.setCliente(clienteAndres);
         mascotasRepository.save(mascota11);
 
-        Mascota mascota12 = new Mascota(clienteSara.getNombre(), "Lola", "Basset Hound", 2, 18, "Ning", true,"dog12.jpg");
+        Mascota mascota12 = new Mascota("Lola", "Basset Hound", 2, 18, "Ning", true,"dog12.jpg");
         mascota12.setCliente(clienteSara);
         mascotasRepository.save(mascota12);
 
-        Mascota mascota13 = new Mascota(clienteElena.getNombre(), "Tina", "Boston Terrier", 3, 7, "Ning", true,"dog13.jpg");
+        Mascota mascota13 = new Mascota("Tina", "Boston Terrier", 3, 7, "Ning", true,"dog13.jpg");
         mascota13.setCliente(clienteElena);
         mascotasRepository.save(mascota13);
 
-        Mascota mascota14 = new Mascota(clienteFernando.getNombre(), "Duke", "Gran Danés", 5, 40, "Ning", true,"dog14.jpg");
+        Mascota mascota14 = new Mascota("Duke", "Gran Danés", 5, 40, "Ning", true,"dog14.jpg");
         mascota14.setCliente(clienteFernando);
         mascotasRepository.save(mascota14);
 
-        Mascota mascota15 = new Mascota(clienteNatalia.getNombre(), "Coco", "Pug", 1, 6, "Ning", true,"dog15.jpg");
+        Mascota mascota15 = new Mascota("Coco", "Pug", 1, 6, "Ning", true,"dog15.jpg");
         mascota15.setCliente(clienteNatalia);
         mascotasRepository.save(mascota15);
 
-        Mascota mascota16 = new Mascota(clienteFranco.getNombre(), "Milo", "Husky", 3, 21, "Ning", true,"dog16.jpg");
+        Mascota mascota16 = new Mascota("Milo", "Husky", 3, 21, "Ning", true,"dog16.jpg");
         mascota16.setCliente(clienteFranco);
         mascotasRepository.save(mascota16);
 
-        Mascota mascota17 = new Mascota(clienteGiulia.getNombre(), "Bella", "Yorkshire Terrier", 2, 5, "Ning", true,"dog17.jpg");
+        Mascota mascota17 = new Mascota("Bella", "Yorkshire Terrier", 2, 5, "Ning", true,"dog17.jpg");
         mascota17.setCliente(clienteGiulia);
         mascotasRepository.save(mascota17);
 
-        Mascota mascota18 = new Mascota(clienteLeonardo.getNombre(), "Oscar", "Doberman", 4, 32, "Ning", true,"dog18.jpg");
+        Mascota mascota18 = new Mascota("Oscar", "Doberman", 4, 32, "Ning", true,"dog18.jpg");
         mascota18.setCliente(clienteLeonardo);
         mascotasRepository.save(mascota18);
 
-        Mascota mascota19 = new Mascota(clienteSophia.getNombre(), "Mia", "Shiba Inu", 3, 12, "Ning", true,"dog19.jpg");
+        Mascota mascota19 = new Mascota("Mia", "Shiba Inu", 3, 12, "Ning", true,"dog19.jpg");
         mascota19.setCliente(clienteSophia);
         mascotasRepository.save(mascota19);
 
-        Mascota mascota20 = new Mascota(clienteMatteo.getNombre(), "Bobby", "Rottweiler", 5, 38, "Ning", true,"dog20.jpg");
+        Mascota mascota20 = new Mascota("Bobby", "Rottweiler", 5, 38, "Ning", true,"dog20.jpg");
         mascota20.setCliente(clienteMatteo);
         mascotasRepository.save(mascota20);
 
-        Mascota mascota21 = new Mascota(clienteLuca.getNombre(), "Gigi", "Bichón Frisé", 4, 8, "Ning", true,"dog21.jpg");
+        Mascota mascota21 = new Mascota("Gigi", "Bichón Frisé", 4, 8, "Ning", true,"dog21.jpg");
         mascota21.setCliente(clienteLuca);
         mascotasRepository.save(mascota21);
 
-        Mascota mascota22 = new Mascota(clienteValeria.getNombre(), "Pipo", "Corgi", 3, 10, "Ning", true,"dog22.jpg");
+        Mascota mascota22 = new Mascota("Pipo", "Corgi", 3, 10, "Ning", true,"dog22.jpg");
         mascota22.setCliente(clienteValeria);
         mascotasRepository.save(mascota22);
 
-        Mascota mascota23 = new Mascota(clienteMarco.getNombre(), "Thor", "Dogo Argentino", 6, 35, "Ning", true,"dog23.jpg");
+        Mascota mascota23 = new Mascota("Thor", "Dogo Argentino", 6, 35, "Ning", true,"dog23.jpg");
         mascota23.setCliente(clienteMarco);
         mascotasRepository.save(mascota23);
 
-        Mascota mascota24 = new Mascota(clienteMartina.getNombre(), "Daisy", "Border Collie", 2, 16, "Ning", true,"dog24.jpg");
+        Mascota mascota24 = new Mascota("Daisy", "Border Collie", 2, 16, "Ning", true,"dog24.jpg");
         mascota24.setCliente(clienteMartina);
         mascotasRepository.save(mascota24);
 
-        Mascota mascota25 = new Mascota(clienteEnzo.getNombre(), "Charlie", "French Bulldog", 4, 12, "Ning", true,"dog25.jpg");
+        Mascota mascota25 = new Mascota("Charlie", "French Bulldog", 4, 12, "Ning", true,"dog25.jpg");
         mascota25.setCliente(clienteEnzo);
         mascotasRepository.save(mascota25);
 
-        Mascota mascota26 = new Mascota(clienteAlessandra.getNombre(), "Sasha", "Jack Russell Terrier", 3, 6, "Ning", true,"dog26.jpg");
+        Mascota mascota26 = new Mascota("Sasha", "Jack Russell Terrier", 3, 6, "Ning", true,"dog26.jpg");
         mascota26.setCliente(clienteAlessandra);
         mascotasRepository.save(mascota26);
 
-        Mascota mascota27 = new Mascota(clienteVincenzo.getNombre(), "Max", "Pomerania", 2, 4, "Ning", true,"dog27.jpg");
+        Mascota mascota27 = new Mascota("Max", "Pomerania", 2, 4, "Ning", true,"dog27.jpg");
         mascota27.setCliente(clienteVincenzo);
         mascotasRepository.save(mascota27);
 
-        Mascota mascota28 = new Mascota(clienteGabriela.getNombre(), "Lily", "Cavalier King Charles Spaniel", 1, 7, "Ning", true,"dog28.jpg");
+        Mascota mascota28 = new Mascota("Lily", "Cavalier King Charles Spaniel", 1, 7, "Ning", true,"dog28.jpg");
         mascota28.setCliente(clienteGabriela);
         mascotasRepository.save(mascota28);
 
-        Mascota mascota29 = new Mascota(clienteRicardo.getNombre(), "Zeus", "Mastín Napolitano", 5, 45, "Ning", true,"dog29.jpg");
+        Mascota mascota29 = new Mascota("Zeus", "Mastín Napolitano", 5, 45, "Ning", true,"dog29.jpg");
         mascota29.setCliente(clienteRicardo);
         mascotasRepository.save(mascota29);
 
-        Mascota mascota30 = new Mascota(clienteIsabella.getNombre(), "Buddy", "Setter Irlandés", 3, 28, "Ning", true,"dog30.jpg");
+        Mascota mascota30 = new Mascota("Buddy", "Setter Irlandés", 3, 28, "Ning", true,"dog30.jpg");
         mascota30.setCliente(clienteIsabella);
         mascotasRepository.save(mascota30);
 
-        Mascota mascota31 = new Mascota(clienteJames.getNombre(), "Buddy", "Golden Retriever", 4, 30, "Ning", true,"dog31.jpg");
+        Mascota mascota31 = new Mascota("Buddy", "Golden Retriever", 4, 30, "Ning", true, "dog31.jpg");
         mascota31.setCliente(clienteJames);
         mascotasRepository.save(mascota31);
 
-        Mascota mascota32 = new Mascota(clienteOlivia.getNombre(), "Bella", "Labrador Retriever", 3, 25, "Ning", true,"dog32.jpg");
+        Mascota mascota32 = new Mascota("Bella", "Labrador Retriever", 3, 25, "Ning", true, "dog32.jpg");
         mascota32.setCliente(clienteOlivia);
         mascotasRepository.save(mascota32);
 
-        Mascota mascota33 = new Mascota(clienteWilliam.getNombre(), "Duke", "German Shepherd", 5, 35, "Ning", true,"dog33.jpg");
+        Mascota mascota33 = new Mascota("Duke", "German Shepherd", 5, 35, "Ning", true, "dog33.jpg");
         mascota33.setCliente(clienteWilliam);
         mascotasRepository.save(mascota33);
 
-        Mascota mascota34 = new Mascota(clienteEmma.getNombre(), "Lucy", "Cocker Spaniel", 2, 15, "Ning", true,"dog34.jpg");
+        Mascota mascota34 = new Mascota("Lucy", "Cocker Spaniel", 2, 15, "Ning", true, "dog34.jpg");
         mascota34.setCliente(clienteEmma);
         mascotasRepository.save(mascota34);
 
-        Mascota mascota35 = new Mascota(clienteBenjamin.getNombre(), "Max", "Bulldog", 4, 20, "Ning", true,"dog35.jpg");
+        Mascota mascota35 = new Mascota("Max", "Bulldog", 4, 20, "Ning", true, "dog35.jpg");
         mascota35.setCliente(clienteBenjamin);
         mascotasRepository.save(mascota35);
 
-        Mascota mascota36 = new Mascota(clienteCharlotte.getNombre(), "Chloe", "Beagle", 3, 12, "Ning", true,"dog36.jpg");
+        Mascota mascota36 = new Mascota("Chloe", "Beagle", 3, 12, "Ning", true, "dog36.jpg");
         mascota36.setCliente(clienteCharlotte);
         mascotasRepository.save(mascota36);
 
-        Mascota mascota37 = new Mascota(clienteLucas.getNombre(), "Oscar", "Boxer", 5, 28, "Ning", true,"dog37.jpg");
+        Mascota mascota37 = new Mascota("Oscar", "Boxer", 5, 28, "Ning", true, "dog37.jpg");
         mascota37.setCliente(clienteLucas);
         mascotasRepository.save(mascota37);
 
-        Mascota mascota38 = new Mascota(clienteAva.getNombre(), "Sadie", "Poodle", 2, 8, "Ning", true,"dog38.jpg");
+        Mascota mascota38 = new Mascota("Sadie", "Poodle", 2, 8, "Ning", true, "dog38.jpg");
         mascota38.setCliente(clienteAva);
         mascotasRepository.save(mascota38);
 
-        Mascota mascota39 = new Mascota(clienteHenry.getNombre(), "Buster", "Dachshund", 6, 11, "Ning", true,"dog39.jpg");
+        Mascota mascota39 = new Mascota("Buster", "Dachshund", 6, 11, "Ning", true, "dog39.jpg");
         mascota39.setCliente(clienteHenry);
         mascotasRepository.save(mascota39);
 
-        Mascota mascota40 = new Mascota(clienteSophiaUS.getNombre(), "Molly", "Shih Tzu", 4, 6, "Ning", true,"dog40.jpg");
+        Mascota mascota40 = new Mascota("Molly", "Shih Tzu", 4, 6, "Ning", true, "dog40.jpg");
         mascota40.setCliente(clienteSophiaUS);
         mascotasRepository.save(mascota40);
 
-        Mascota mascota41 = new Mascota(clienteJackson.getNombre(), "Rocky", "Rottweiler", 5, 40, "Ning", true,"dog41.jpg");
+        Mascota mascota41 = new Mascota("Rocky", "Rottweiler", 5, 40, "Ning", true, "dog41.jpg");
         mascota41.setCliente(clienteJackson);
         mascotasRepository.save(mascota41);
 
-        Mascota mascota42 = new Mascota(clienteAmelia.getNombre(), "Zoe", "Border Collie", 3, 18, "Ning", true,"dog42.jpg");
+        Mascota mascota42 = new Mascota("Zoe", "Border Collie", 3, 18, "Ning", true, "dog42.jpg");
         mascota42.setCliente(clienteAmelia);
         mascotasRepository.save(mascota42);
 
-        Mascota mascota43 = new Mascota(clienteSebastian.getNombre(), "Cooper", "Australian Shepherd", 4, 23, "Ning", true,"dog43.jpg");
+        Mascota mascota43 = new Mascota("Cooper", "Australian Shepherd", 4, 23, "Ning", true, "dog43.jpg");
         mascota43.setCliente(clienteSebastian);
         mascotasRepository.save(mascota43);
 
-        Mascota mascota44 = new Mascota(clienteMiaUS.getNombre(), "Roxy", "Dalmatian", 3, 25, "Ning", true,"dog44.jpg");
+        Mascota mascota44 = new Mascota("Roxy", "Dalmatian", 3, 25, "Ning", true, "dog44.jpg");
         mascota44.setCliente(clienteMiaUS);
         mascotasRepository.save(mascota44);
 
-        Mascota mascota45 = new Mascota(clienteMichael.getNombre(), "Maverick", "Pit Bull", 2, 22, "Ning", true,"dog45.jpg");
+        Mascota mascota45 = new Mascota("Maverick", "Pit Bull", 2, 22, "Ning", true, "dog45.jpg");
         mascota45.setCliente(clienteMichael);
         mascotasRepository.save(mascota45);
 
-        Mascota mascota46 = new Mascota(clienteHarper.getNombre(), "Bailey", "Great Dane", 5, 50, "Ning", true,"dog46.jpg");
+        Mascota mascota46 = new Mascota("Bailey", "Great Dane", 5, 50, "Ning", true, "dog46.jpg");
         mascota46.setCliente(clienteHarper);
         mascotasRepository.save(mascota46);
 
-        Mascota mascota47 = new Mascota(clienteAlexander.getNombre(), "Riley", "Pug", 3, 9, "Ning", true,"dog47.jpg");
+        Mascota mascota47 = new Mascota("Riley", "Pug", 3, 9, "Ning", true, "dog47.jpg");
         mascota47.setCliente(clienteAlexander);
         mascotasRepository.save(mascota47);
 
-        Mascota mascota48 = new Mascota(clienteEvelyn.getNombre(), "Daisy", "Jack Russell Terrier", 2, 7, "Ning", true,"dog48.jpg");
+        Mascota mascota48 = new Mascota("Daisy", "Jack Russell Terrier", 2, 7, "Ning", true, "dog48.jpg");
         mascota48.setCliente(clienteEvelyn);
         mascotasRepository.save(mascota48);
 
-        Mascota mascota49 = new Mascota(clienteDaniel.getNombre(), "Hunter", "Siberian Husky", 4, 24, "Ning", true,"dog49.jpg");
+        Mascota mascota49 = new Mascota("Hunter", "Siberian Husky", 4, 24, "Ning", true, "dog49.jpg");
         mascota49.setCliente(clienteDaniel);
         mascotasRepository.save(mascota49);
 
-        Mascota mascota50 = new Mascota(clienteScarlett.getNombre(), "Coco", "Pomeranian", 1, 4, "Ning", true,"dog50.jpg");
+        Mascota mascota50 = new Mascota("Coco", "Pomeranian", 1, 4, "Ning", true, "dog50.jpg");
         mascota50.setCliente(clienteScarlett);
         mascotasRepository.save(mascota50);
 
-        Mascota mascota51 = new Mascota(clienteJuan.getNombre(), "Shadow", "Weimaraner", 3, 28, "Ning", true,"dog51.jpg");
+        Mascota mascota51 = new Mascota("Shadow", "Weimaraner", 3, 28, "Ning", true, "dog51.jpg");
         mascota51.setCliente(clienteJuan);
         mascotasRepository.save(mascota51);
 
-        Mascota mascota52 = new Mascota(clientePedro.getNombre(), "Chico", "Alaskan Malamute", 4, 40, "Ning", true,"dog52.jpg");
+        Mascota mascota52 = new Mascota("Chico", "Alaskan Malamute", 4, 40, "Ning", true, "dog52.jpg");
         mascota52.setCliente(clientePedro);
         mascotasRepository.save(mascota52);
 
-        Mascota mascota53 = new Mascota(clienteMaria.getNombre(), "Maddie", "Australian Cattle Dog", 2, 20, "Ning", true,"dog53.jpg");
+        Mascota mascota53 = new Mascota("Maddie", "Australian Cattle Dog", 2, 20, "Ning", true, "dog53.jpg");
         mascota53.setCliente(clienteMaria);
         mascotasRepository.save(mascota53);
 
-        Mascota mascota54 = new Mascota(clienteAna.getNombre(), "Oreo", "Dalmatian", 3, 24, "Ning", true,"dog54.jpg");
+        Mascota mascota54 = new Mascota("Oreo", "Dalmatian", 3, 24, "Ning", true, "dog54.jpg");
         mascota54.setCliente(clienteAna);
         mascotasRepository.save(mascota54);
 
-        Mascota mascota55 = new Mascota(clienteJose.getNombre(), "Gunner", "Doberman Pinscher", 4, 35, "Ning", true,"dog55.jpg");
+        Mascota mascota55 = new Mascota("Gunner", "Doberman Pinscher", 4, 35, "Ning", true, "dog55.jpg");
         mascota55.setCliente(clienteJose);
         mascotasRepository.save(mascota55);
 
-        Mascota mascota56 = new Mascota(clienteCarlos.getNombre(), "Zara", "Vizsla", 2, 22, "Ning", true,"dog56.jpg");
+        Mascota mascota56 = new Mascota("Zara", "Vizsla", 2, 22, "Ning", true, "dog56.jpg");
         mascota56.setCliente(clienteCarlos);
         mascotasRepository.save(mascota56);
 
-        Mascota mascota57 = new Mascota(clienteLuis.getNombre(), "Nala", "Bernese Mountain Dog", 3, 30, "Ning", true,"dog57.jpg");
+        Mascota mascota57 = new Mascota("Nala", "Bernese Mountain Dog", 3, 30, "Ning", true, "dog57.jpg");
         mascota57.setCliente(clienteLuis);
         mascotasRepository.save(mascota57);
 
-        Mascota mascota58 = new Mascota(clienteDiana.getNombre(), "Wally", "Saint Bernard", 5, 50, "Ning", true,"dog58.jpg");
+        Mascota mascota58 = new Mascota("Wally", "Saint Bernard", 5, 50, "Ning", true, "dog58.jpg");
         mascota58.setCliente(clienteDiana);
         mascotasRepository.save(mascota58);
 
-        Mascota mascota59 = new Mascota(clienteLaura.getNombre(), "Milo", "Maltese", 1, 4, "Ning", true,"dog59.jpg");
+        Mascota mascota59 = new Mascota("Milo", "Maltese", 1, 4, "Ning", true, "dog59.jpg");
         mascota59.setCliente(clienteLaura);
         mascotasRepository.save(mascota59);
 
-        Mascota mascota60 = new Mascota(clienteMiguel.getNombre(), "Kona", "Australian Shepherd", 4, 23, "Ning", true,"dog60.jpg");
+        Mascota mascota60 = new Mascota("Kona", "Australian Shepherd", 4, 23, "Ning", true, "dog60.jpg");
         mascota60.setCliente(clienteMiguel);
         mascotasRepository.save(mascota60);
 
-        Mascota mascota61 = new Mascota(clienteAndres.getNombre(), "Rex", "Bullmastiff", 6, 45, "Ning", true,"dog61.jpg");
+        Mascota mascota61 = new Mascota("Rex", "Bullmastiff", 6, 45, "Ning", true, "dog61.jpg");
         mascota61.setCliente(clienteAndres);
         mascotasRepository.save(mascota61);
 
-        Mascota mascota62 = new Mascota(clienteSara.getNombre(), "Marley", "Cavalier King Charles Spaniel", 2, 7, "Ning", true,"dog62.jpg");
+        Mascota mascota62 = new Mascota("Marley", "Cavalier King Charles Spaniel", 2, 7, "Ning", true, "dog62.jpg");
         mascota62.setCliente(clienteSara);
         mascotasRepository.save(mascota62);
 
-        Mascota mascota63 = new Mascota(clienteElena.getNombre(), "Benny", "Schipperke", 3, 5, "Ning", true,"dog63.jpg");
+        Mascota mascota63 = new Mascota("Benny", "Schipperke", 3, 5, "Ning", true, "dog63.jpg");
         mascota63.setCliente(clienteElena);
         mascotasRepository.save(mascota63);
 
-        Mascota mascota64 = new Mascota(clienteFernando.getNombre(), "Finn", "Whippet", 4, 10, "Ning", true,"dog64.jpg");
+        Mascota mascota64 = new Mascota("Finn", "Whippet", 4, 10, "Ning", true, "dog64.jpg");
         mascota64.setCliente(clienteFernando);
         mascotasRepository.save(mascota64);
 
-        Mascota mascota65 = new Mascota(clienteNatalia.getNombre(), "Scout", "Nova Scotia Duck Tolling Retriever", 3, 18, "Ning", true,"dog65.jpg");
+        Mascota mascota65 = new Mascota("Scout", "Nova Scotia Duck Tolling Retriever", 3, 18, "Ning", true, "dog65.jpg");
         mascota65.setCliente(clienteNatalia);
         mascotasRepository.save(mascota65);
 
-        Mascota mascota66 = new Mascota(clienteFranco.getNombre(), "Diesel", "Akita", 5, 32, "Ning", true,"dog66.jpg");
+        Mascota mascota66 = new Mascota("Diesel", "Akita", 5, 32, "Ning", true, "dog66.jpg");
         mascota66.setCliente(clienteFranco);
         mascotasRepository.save(mascota66);
 
-        Mascota mascota67 = new Mascota(clienteGiulia.getNombre(), "Hazel", "Cairn Terrier", 2, 6, "Ning", true,"dog67.jpg");
+        Mascota mascota67 = new Mascota("Hazel", "Cairn Terrier", 2, 6, "Ning", true, "dog67.jpg");
         mascota67.setCliente(clienteGiulia);
         mascotasRepository.save(mascota67);
 
-        Mascota mascota68 = new Mascota(clienteLeonardo.getNombre(), "Rusty", "Rhodesian Ridgeback", 4, 36, "Ning", true,"dog68.jpg");
+        Mascota mascota68 = new Mascota("Rusty", "Rhodesian Ridgeback", 4, 36, "Ning", true, "dog68.jpg");
         mascota68.setCliente(clienteLeonardo);
         mascotasRepository.save(mascota68);
 
-        Mascota mascota69 = new Mascota(clienteSophia.getNombre(), "Baxter", "Basset Hound", 6, 30, "Ning", true,"dog69.jpg");
+        Mascota mascota69 = new Mascota("Baxter", "Basset Hound", 6, 30, "Ning", true, "dog69.jpg");
         mascota69.setCliente(clienteSophia);
         mascotasRepository.save(mascota69);
 
-        Mascota mascota70 = new Mascota(clienteMatteo.getNombre(), "Thor", "Great Pyrenees", 4, 40, "Ning", true,"dog70.jpg");
+        Mascota mascota70 = new Mascota("Thor", "Great Pyrenees", 4, 40, "Ning", true, "dog70.jpg");
         mascota70.setCliente(clienteMatteo);
         mascotasRepository.save(mascota70);
 
-        Mascota mascota71 = new Mascota(clienteLuca.getNombre(), "Piper", "Papillon", 3, 4, "Ning", true,"dog71.jpg");
+        Mascota mascota71 = new Mascota("Piper", "Papillon", 3, 4, "Ning", true, "dog71.jpg");
         mascota71.setCliente(clienteLuca);
         mascotasRepository.save(mascota71);
 
-        Mascota mascota72 = new Mascota(clienteValeria.getNombre(), "Teddy", "Tibetan Mastiff", 5, 45, "Ning", true,"dog72.jpg");
+        Mascota mascota72 = new Mascota("Teddy", "Tibetan Mastiff", 5, 45, "Ning", true, "dog72.jpg");
         mascota72.setCliente(clienteValeria);
         mascotasRepository.save(mascota72);
 
-        Mascota mascota73 = new Mascota(clienteMarco.getNombre(), "Simba", "Samoyed", 2, 20, "Ning", true,"dog73.jpg");
+        Mascota mascota73 = new Mascota("Simba", "Samoyed", 2, 20, "Ning", true, "dog73.jpg");
         mascota73.setCliente(clienteMarco);
         mascotasRepository.save(mascota73);
 
-        Mascota mascota74 = new Mascota(clienteMartina.getNombre(), "Apollo", "Dogue de Bordeaux", 4, 45, "Ning", true,"dog74.jpg");
+        Mascota mascota74 = new Mascota("Apollo", "Dogue de Bordeaux", 4, 45, "Ning", true, "dog74.jpg");
         mascota74.setCliente(clienteMartina);
         mascotasRepository.save(mascota74);
 
-        Mascota mascota75 = new Mascota(clienteEnzo.getNombre(), "Lulu", "Lhasa Apso", 3, 6, "Ning", true,"dog75.jpg");
+        Mascota mascota75 = new Mascota("Lulu", "Lhasa Apso", 3, 6, "Ning", true, "dog75.jpg");
         mascota75.setCliente(clienteEnzo);
         mascotasRepository.save(mascota75);
 
-        Mascota mascota76 = new Mascota(clienteAlessandra.getNombre(), "Chase", "Border Terrier", 2, 5, "Ning", true,"dog76.jpg");
+        Mascota mascota76 = new Mascota("Chase", "Border Terrier", 2, 5, "Ning", true, "dog76.jpg");
         mascota76.setCliente(clienteAlessandra);
         mascotasRepository.save(mascota76);
 
-        Mascota mascota77 = new Mascota(clienteVincenzo.getNombre(), "Sadie", "Italian Greyhound", 3, 7, "Ning", true,"dog77.jpg");
+        Mascota mascota77 = new Mascota("Sadie", "Italian Greyhound", 3, 7, "Ning", true, "dog77.jpg");
         mascota77.setCliente(clienteVincenzo);
         mascotasRepository.save(mascota77);
 
-        Mascota mascota78 = new Mascota(clienteGabriela.getNombre(), "Chico", "Shiba Inu", 2, 10, "Ning", true,"dog78.jpg");
+        Mascota mascota78 = new Mascota("Chico", "Shiba Inu", 2, 10, "Ning", true, "dog78.jpg");
         mascota78.setCliente(clienteGabriela);
         mascotasRepository.save(mascota78);
 
-        Mascota mascota79 = new Mascota(clienteRicardo.getNombre(), "Jet", "Manchester Terrier", 4, 8, "Ning", true,"dog79.jpg");
+        Mascota mascota79 = new Mascota("Jet", "Manchester Terrier", 4, 8, "Ning", true, "dog79.jpg");
         mascota79.setCliente(clienteRicardo);
         mascotasRepository.save(mascota79);
 
-        Mascota mascota80 = new Mascota(clienteIsabella.getNombre(), "Ginger", "Airedale Terrier", 5, 22, "Ning", true,"dog80.jpg");
+        Mascota mascota80 = new Mascota("Ginger", "Airedale Terrier", 5, 22, "Ning", true, "dog80.jpg");
         mascota80.setCliente(clienteIsabella);
         mascotasRepository.save(mascota80);
 
-        Mascota mascota81 = new Mascota(clienteJames.getNombre(), "Lola", "Soft Coated Wheaten Terrier", 3, 18, "Ning", true,"dog81.jpg");
+        Mascota mascota81 = new Mascota("Lola", "Soft Coated Wheaten Terrier", 3, 18, "Ning", true, "dog81.jpg");
         mascota81.setCliente(clienteJames);
         mascotasRepository.save(mascota81);
 
-        Mascota mascota82 = new Mascota(clienteOlivia.getNombre(), "Dakota", "Flat-Coated Retriever", 6, 34, "Ning", true,"dog82.jpg");
+        Mascota mascota82 = new Mascota("Dakota", "Flat-Coated Retriever", 6, 34, "Ning", true, "dog82.jpg");
         mascota82.setCliente(clienteOlivia);
         mascotasRepository.save(mascota82);
 
-        Mascota mascota83 = new Mascota(clienteWilliam.getNombre(), "Bobby", "Old English Sheepdog", 4, 40, "Ning", true,"dog83.jpg");
+        Mascota mascota83 = new Mascota("Bobby", "Old English Sheepdog", 4, 40, "Ning", true, "dog83.jpg");
         mascota83.setCliente(clienteWilliam);
         mascotasRepository.save(mascota83);
 
-        Mascota mascota84 = new Mascota(clienteEmma.getNombre(), "Cleo", "Saluki", 3, 20, "Ning", true,"dog84.jpg");
+        Mascota mascota84 = new Mascota("Cleo", "Saluki", 3, 20, "Ning", true, "dog84.jpg");
         mascota84.setCliente(clienteEmma);
         mascotasRepository.save(mascota84);
 
-        Mascota mascota85 = new Mascota(clienteBenjamin.getNombre(), "Otis", "American Bulldog", 5, 30, "Ning", true,"dog85.jpg");
+        Mascota mascota85 = new Mascota("Otis", "American Bulldog", 5, 30, "Ning", true, "dog85.jpg");
         mascota85.setCliente(clienteBenjamin);
         mascotasRepository.save(mascota85);
 
-        Mascota mascota86 = new Mascota(clienteCharlotte.getNombre(), "Sunny", "Briard", 4, 32, "Ning", true,"dog86.jpg");
+        Mascota mascota86 = new Mascota("Sunny", "Briard", 4, 32, "Ning", true, "dog86.jpg");
         mascota86.setCliente(clienteCharlotte);
         mascotasRepository.save(mascota86);
 
-        Mascota mascota87 = new Mascota(clienteLucas.getNombre(), "Ava", "Norwegian Elkhound", 2, 23, "Ning", true,"dog87.jpg");
+        Mascota mascota87 = new Mascota("Ava", "Norwegian Elkhound", 2, 23, "Ning", true, "dog87.jpg");
         mascota87.setCliente(clienteLucas);
         mascotasRepository.save(mascota87);
 
-        Mascota mascota88 = new Mascota(clienteAva.getNombre(), "Murphy", "Welsh Springer Spaniel", 3, 20, "Ning", true,"dog88.jpg");
+        Mascota mascota88 = new Mascota("Murphy", "Welsh Springer Spaniel", 3, 20, "Ning", true, "dog88.jpg");
         mascota88.setCliente(clienteAva);
         mascotasRepository.save(mascota88);
 
-        Mascota mascota89 = new Mascota(clienteHenry.getNombre(), "Buster", "Norwegian Lundehund", 2, 8, "Ning", true,"dog89.jpg");
+        Mascota mascota89 = new Mascota("Buster", "Norwegian Lundehund", 2, 8, "Ning", true, "dog89.jpg");
         mascota89.setCliente(clienteHenry);
         mascotasRepository.save(mascota89);
 
-        Mascota mascota90 = new Mascota(clienteSophiaUS.getNombre(), "Jax", "Chinese Crested", 1, 5, "Ning", true,"dog90.jpg");
+        Mascota mascota90 = new Mascota("Jax", "Chinese Crested", 1, 5, "Ning", true, "dog90.jpg");
         mascota90.setCliente(clienteSophiaUS);
         mascotasRepository.save(mascota90);
 
-        Mascota mascota91 = new Mascota(clienteJackson.getNombre(), "Loki", "Komondor", 4, 60, "Ning", true,"dog91.jpg");
+        Mascota mascota91 = new Mascota("Loki", "Komondor", 4, 60, "Ning", true, "dog91.jpg");
         mascota91.setCliente(clienteJackson);
         mascotasRepository.save(mascota91);
 
-        Mascota mascota92 = new Mascota(clienteAmelia.getNombre(), "Hazel", "Hovawart", 3, 32, "Ning", true,"dog92.jpg");
+        Mascota mascota92 = new Mascota("Hazel", "Hovawart", 3, 32, "Ning", true, "dog92.jpg");
         mascota92.setCliente(clienteAmelia);
         mascotasRepository.save(mascota92);
 
-        Mascota mascota93 = new Mascota(clienteSebastian.getNombre(), "Storm", "Cane Corso", 5, 50, "Ning", true,"dog93.jpg");
+        Mascota mascota93 = new Mascota("Storm", "Cane Corso", 5, 50, "Ning", true, "dog93.jpg");
         mascota93.setCliente(clienteSebastian);
         mascotasRepository.save(mascota93);
 
-        Mascota mascota94 = new Mascota(clienteMiaUS.getNombre(), "Foxy", "Pharaoh Hound", 2, 18, "Ning", true,"dog94.jpg");
+        Mascota mascota94 = new Mascota("Foxy", "Pharaoh Hound", 2, 18, "Ning", true, "dog94.jpg");
         mascota94.setCliente(clienteMiaUS);
         mascotasRepository.save(mascota94);
 
-        Mascota mascota95 = new Mascota(clienteMichael.getNombre(), "Goofy", "Lagotto Romagnolo", 4, 25, "Ning", true,"dog95.jpg");
+        Mascota mascota95 = new Mascota("Goofy", "Lagotto Romagnolo", 4, 25, "Ning", true, "dog95.jpg");
         mascota95.setCliente(clienteMichael);
         mascotasRepository.save(mascota95);
 
-        Mascota mascota96 = new Mascota(clienteHarper.getNombre(), "Maxie", "Swedish Vallhund", 3, 14, "Ning", true,"dog96.jpg");
+        Mascota mascota96 = new Mascota("Maxie", "Swedish Vallhund", 3, 14, "Ning", true, "dog96.jpg");
         mascota96.setCliente(clienteHarper);
         mascotasRepository.save(mascota96);
 
-        Mascota mascota97 = new Mascota(clienteAlexander.getNombre(), "Ella", "Wirehaired Vizsla", 4, 29, "Ning", true,"dog97.jpg");
+        Mascota mascota97 = new Mascota("Ella", "Wirehaired Vizsla", 4, 29, "Ning", true, "dog97.jpg");
         mascota97.setCliente(clienteAlexander);
         mascotasRepository.save(mascota97);
 
-        Mascota mascota98 = new Mascota(clienteEvelyn.getNombre(), "Chief", "Perro de Agua Español", 2, 21, "Ning", true,"dog98.jpg");
+        Mascota mascota98 = new Mascota("Chief", "Perro de Agua Español", 2, 21, "Ning", true, "dog98.jpg");
         mascota98.setCliente(clienteEvelyn);
         mascotasRepository.save(mascota98);
 
-        Mascota mascota99 = new Mascota(clienteDaniel.getNombre(), "Ace", "Norwich Terrier", 3, 5, "Ning", true,"dog99.jpg");
+        Mascota mascota99 = new Mascota("Ace", "Norwich Terrier", 3, 5, "Ning", true, "dog99.jpg");
         mascota99.setCliente(clienteDaniel);
         mascotasRepository.save(mascota99);
 
-        Mascota mascota100 = new Mascota(clienteScarlett.getNombre(), "Zelda", "Belgian Laekenois", 4, 27, "Ning", true,"dog100.jpg");
+        Mascota mascota100 = new Mascota("Zelda", "Belgian Laekenois", 4, 27, "Ning", true, "dog100.jpg");
         mascota100.setCliente(clienteScarlett);
         mascotasRepository.save(mascota100);
+
+
 
         // Crear 10 tratamientos, cada uno con un veterinario, una droga y una mascota
         Tratamiento tratamiento1 = new Tratamiento(new Date(System.currentTimeMillis()));

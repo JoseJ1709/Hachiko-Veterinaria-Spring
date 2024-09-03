@@ -40,21 +40,31 @@ public class MascotaServiceImpl implements MascotaService{
     }
 
 
-    @Override
-    public void update(Mascota mascota, Long idCliente) {
-        Cliente cliente = clientesRepository.findById(idCliente).get();
-        mascota.setCliente(cliente);
-        String nomCliente = cliente.getNombre();
-        mascota.setDueño(nomCliente);
-        mascotasRepository.save(mascota);
-    }
 
+    @Override
+    @Transactional
+    public void update(Mascota mascota, Long idCliente) {
+        Cliente cliente = clientesRepository.findById(idCliente).orElseThrow(() -> new RuntimeException("Cliente not found"));
+        Mascota existingMascota = mascotasRepository.findById(mascota.getId()).orElseThrow(() -> new RuntimeException("Mascota not found"));
+
+        // Actualizar todos los campos de la mascota existente
+        existingMascota.setNombre(mascota.getNombre());
+        existingMascota.setRaza(mascota.getRaza());
+        existingMascota.setEdad(mascota.getEdad());
+        existingMascota.setPeso(mascota.getPeso());
+        existingMascota.setEnfermedad(mascota.getEnfermedad());
+        existingMascota.setEstado(mascota.getEstado());
+        existingMascota.setImagen(mascota.getImagen());
+        existingMascota.setCliente(cliente);
+        existingMascota.setTratamientosList(mascota.getTratamientosList());
+
+        // Guardar la mascota actualizada
+        mascotasRepository.save(existingMascota);
+    }
     @Override
     public void add(Mascota mascota, Long idCliente) {
         Cliente cliente = clientesRepository.findById(idCliente).get();
         mascota.setCliente(cliente);
-        String nomCliente = cliente.getNombre();
-        mascota.setDueño(nomCliente);
         mascotasRepository.save(mascota);
     }
 }

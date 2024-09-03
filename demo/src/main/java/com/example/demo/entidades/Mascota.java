@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "mascotas")
 public class Mascota {
-    private String dueño;
     private String nombre;
     private String raza;
     private int edad;
@@ -25,13 +24,11 @@ public class Mascota {
     @ManyToOne
     private Cliente cliente;
 
-
     @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tratamiento> tratamientosList;
 
-    public Mascota(Long id,String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
+    public Mascota(Long id, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
         this.id = id;
-        this.dueño = dueño;
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -43,9 +40,8 @@ public class Mascota {
 
     public Mascota() {
     }
-    public Mascota(String dueño, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
+    public Mascota(String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {
 
-        this.dueño = dueño;
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
@@ -54,18 +50,22 @@ public class Mascota {
         this.estado = estado;
         this.imagen = imagen;
     }
+
+    public List<Tratamiento> getTratamientosList() {
+        return tratamientosList;
+    }
+
+    public void setTratamientosList(List<Tratamiento> tratamientosList) {
+        this.tratamientosList.clear();
+        if (tratamientosList != null) {
+            this.tratamientosList.addAll(tratamientosList);
+        }
+    }
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
-    }
-    public String getDueño() {
-        return dueño;
-    }
-
-    public void setDueño(String dueño) {
-        this.dueño = dueño;
     }
     public String getNombre() {return nombre;}
     public void setNombre(String nombre) {

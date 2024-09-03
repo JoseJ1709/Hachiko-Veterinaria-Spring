@@ -21,6 +21,7 @@ public class Cliente {
     private List<Mascota> mascotasList;
 
     public Cliente() {
+        this.mascotasList = new ArrayList<>();
     }
 
     public Cliente(int cedula, String nombre, String correo, int celular) {
@@ -84,5 +85,12 @@ public class Cliente {
 
     public void setMascotasList(List<Mascota> mascotasList) {
         this.mascotasList = mascotasList;
+    }
+
+    public void addMascota(Mascota mascota) {
+    }
+    public void removeMascota(Mascota mascota) {
+        mascotasList.remove(mascota);
+        mascota.setCliente(null);
     }
 }

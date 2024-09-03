@@ -8,6 +8,6 @@ public interface ClienteService {
     public Cliente findById(Long id);
     public Collection<Cliente> findAll();
     public void deleteById(Long id);
-    public void update(Cliente cliente);
+    public Cliente update(Cliente cliente);
     public void add(Cliente cliente);
 }

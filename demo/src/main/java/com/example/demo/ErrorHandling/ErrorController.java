@@ -10,16 +10,14 @@ import java.util.NoSuchElementException;
 @ControllerAdvice
 public class ErrorController{
 
-
     @ExceptionHandler(NotFoundException.class)
-    public String error(Model model, NotFoundException ex){
-
-        return "pagina_error";
+    public String handleNotFoundException(Model model, NotFoundException ex) {
+        model.addAttribute("errorMessage", "Cliente no encontrado con cedula: " + ex.getId());
+        return "pagina_error2";
     }
+
     @ExceptionHandler(NoSuchElementException.class)
-    public String error(Model model, NoSuchElementException ex){
-
+    public String handleNoSuchElementException(Model model, NoSuchElementException ex) {
         return "pagina_error";
     }
-
 }
