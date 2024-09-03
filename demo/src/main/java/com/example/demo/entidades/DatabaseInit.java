@@ -28,10 +28,24 @@ public class DatabaseInit implements ApplicationRunner {
     @Autowired
     TratamientosRepository tratamientosRepository;
 
+    @Autowired
+    AdministradoresRepository administradoresRepository;
+
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Administrador admin1 = new Administrador("admin1", "password1");
+        Administrador admin2 = new Administrador("admin2", "password2");
+        Administrador admin3 = new Administrador("admin3", "password3");
+        Administrador admin4 = new Administrador("admin4", "password4");
+        Administrador admin5 = new Administrador("admin5", "password5");
+
+        administradoresRepository.save(admin1);
+        administradoresRepository.save(admin2);
+        administradoresRepository.save(admin3);
+        administradoresRepository.save(admin4);
+        administradoresRepository.save(admin5);
 
         Veterinario vet1 = new Veterinario("Dr. Smith", "123456", "password1", "Cardiología", "foto1.jpg", 0);
         Veterinario vet2 = new Veterinario("Dr. Johnson", "123457", "password2", "Dermatología", "foto2.jpg", 0);

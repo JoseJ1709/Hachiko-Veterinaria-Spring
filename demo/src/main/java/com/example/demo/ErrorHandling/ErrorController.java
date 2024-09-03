@@ -21,4 +21,5 @@ public class ErrorController{
 
         return "pagina_error";
     }
+
 }
