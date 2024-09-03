@@ -15,6 +15,8 @@ public class Mascota {
     private int peso;
     private String enfermedad;
     private boolean estado;
+
+    @Column(length = 512)
     private String imagen;
 
     @Id

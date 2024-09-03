@@ -136,7 +136,7 @@ public class DatabaseInit implements ApplicationRunner {
         Cliente clienteDaniel = clientesRepository.save(new Cliente(1023242595, "Daniel", "daniel@gmail.com", 310254382));
         Cliente clienteScarlett = clientesRepository.save(new Cliente(1023242596, "Scarlett", "scarlett@gmail.com", 310254383));
 
-        Mascota mascota1 = new Mascota("Firulais", "Pastor Aleman", 5, 20, "Ning", true,"dog1.jpg");
+        Mascota mascota1 = new Mascota("Firulais", "Pastor Aleman", 5, 20, "Ning", true,"https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg");
         mascota1.setCliente(clienteJuan);
         mascotasRepository.save(mascota1);
 
