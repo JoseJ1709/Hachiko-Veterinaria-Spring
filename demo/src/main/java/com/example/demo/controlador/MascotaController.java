@@ -1,5 +1,6 @@
 package com.example.demo.controlador;
 
+import com.example.demo.entidades.Cliente;
 import com.example.demo.entidades.Mascota;
 import com.example.demo.repositorio.ClientesRepository;
 import com.example.demo.servicio.MascotaService;
@@ -29,17 +30,15 @@ public class MascotaController {
     }
     @GetMapping("/registrar")
     public String registrarMascota(Model model){
-        Mascota mascota = new Mascota("","","",0,0,"",true,"");
+        Mascota mascota = new Mascota("","",0,0,"",false,"");
         model.addAttribute("mascota", mascota);
         model.addAttribute("clientes", clientesRepository.findAll());
 
         return "crear_mascota";
     }
     @PostMapping("/agregar")
-    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota){
-        String dueno = mascota.getDueño();
-        Long idCliente = Long.parseLong(dueno);
-        mascotaService.add(mascota,idCliente);
+    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota, @RequestParam("clienteId") Long clienteId) {
+        mascotaService.add(mascota, clienteId);
         return "redirect:/mascota/all";
     }
     @GetMapping("/eliminar/{id}")
@@ -54,10 +53,8 @@ public class MascotaController {
         return "editar_mascota";
     }
     @PostMapping("/editar/{id}")
-    public String editarMascota(@PathVariable("id") int identificacion, @ModelAttribute("mascota") Mascota mascota){
-        String dueno = mascota.getDueño();
-        Long idCliente = Long.parseLong(dueno);
-        mascotaService.update(mascota,idCliente);
-        return "/mascota/all";
+    public String editarMascota(@PathVariable("id") int identificacion, @ModelAttribute("mascota") Mascota mascota, @RequestParam("clienteId") Long clienteId) {
+        mascotaService.update(mascota, clienteId);
+        return "redirect:/mascota/all";
     }
 }

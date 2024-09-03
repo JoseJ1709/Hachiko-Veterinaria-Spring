@@ -31,7 +31,7 @@
     </div>
     <div id="forms">
         <h1 id="registrar">Registrar</h1>
-        <form th:object="${mascota}" th:action="@{/mascota/editar/{id}(id=${mascota.id})}" method="post" >
+        <form th:object="${mascota}" th:action="@{/mascota/editar/{id}(id=${mascota.id})}" method="post">
             <h2>Información Mascota</h2>
             <input type="hidden" th:field="*{id}">
             <div>
@@ -51,8 +51,8 @@
                 <input th:field="*{edad}" type="number" id="edad" name="edad">
             </div>
             <div>
-                <label for="dueno">Dueño:</label>
-                <select th:field="*{dueño}" id="dueno" name="dueno">
+                <label for="clienteId">Dueño:</label>
+                <select id="clienteId" name="clienteId" required>
                     <option value="" disabled selected>Seleccione un dueño</option>
                     <option th:each="cliente : ${clientes}"
                             th:value="${cliente.id}"
@@ -76,6 +76,8 @@
                 <button id="button-registrar-mascota" type="submit">Registrar</button>
             </div>
         </form>
+
+
     </div>
 </main>
 </body>

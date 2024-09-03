@@ -1,5 +1,6 @@
 package com.example.demo.controlador;
 
+import com.example.demo.ErrorHandling.NotFoundException;
 import com.example.demo.entidades.Cliente;
 import com.example.demo.entidades.Mascota;
 import com.example.demo.repositorio.ClientesRepository;
@@ -52,7 +53,7 @@ public class ClienteController {
     @PostMapping("/editar/{id}")
     public String editarCliente(@PathVariable("id") Long identificacion, @ModelAttribute("cliente") Cliente cliente){
         clienteService.update(cliente);
-        return "redirect:/mascota/all";
+        return "redirect:/cliente/all";
     }
     @GetMapping("/login")
     public String login(Model model){
@@ -62,6 +63,10 @@ public class ClienteController {
     }
     @PostMapping("/login")
     public String login(@ModelAttribute("cliente") Cliente cliente, Model model){
+        Cliente foundCliente = clientesRepository.findByCedula(cliente.getCedula());
+        if (foundCliente == null) {
+            throw new NotFoundException(cliente.getCedula());
+        }
         Cliente cliente1 = clientesRepository.findByCedula(cliente.getCedula());
         if(cliente1.getCedula() == cliente.getCedula()){
             Long id = cliente1.getId();

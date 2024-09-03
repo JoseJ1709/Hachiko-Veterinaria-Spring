@@ -130,15 +130,16 @@ header nav ul li a{
 }
 
 .container {
-    height: 614px;
     width: 1209px;
     background-color: white;
     padding: 20px;
-    border-radius: 8px;;
+    border-radius: 8px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 614px; /* Cambiado de height a min-height */
+    height: auto; /* Permitir que crezca automáticamente */
 }
 
 .container h1 {
