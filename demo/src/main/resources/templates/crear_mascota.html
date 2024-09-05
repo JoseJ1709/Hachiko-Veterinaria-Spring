@@ -36,23 +36,23 @@
             <input type="hidden" th:field="*{id}">
             <div>
                 <label for="nombre_mascota">Nombre:</label>
-                <input th:field="*{nombre}" type="text" id="nombre_mascota" name="nombre">
+                <input th:field="*{nombre}" type="text" id="nombre_mascota" name="nombre" required>
             </div>
             <div>
                 <label for="raza">Raza:</label>
-                <input th:field="*{raza}" type="text" id="raza" name="raza">
+                <input th:field="*{raza}" type="text" id="raza" name="raza" required>
             </div>
             <div>
                 <label for="peso">Peso (kg):</label>
-                <input th:field="*{peso}" type="number" id="peso" name="peso">
+                <input th:field="*{peso}" type="number" id="peso" name="peso" required>
             </div>
             <div>
                 <label for="edad">Edad (años):</label>
-                <input th:field="*{edad}" type="number" id="edad" name="edad">
+                <input th:field="*{edad}" type="number" id="edad" name="edad" required>
             </div>
             <div>
                 <label for="clienteId">Dueño:</label>
-                <select id="clienteId" name="clienteId">
+                <select id="clienteId" name="clienteId" required>
                     <option value="" disabled selected>Seleccione un dueño</option>
                     <option th:each="cliente : ${clientes}"
                             th:value="${cliente.id}"
@@ -62,11 +62,11 @@
             </div>
             <div>
                 <label for="foto">Foto:</label>
-                <input th:field="*{imagen}" type="text" id="foto" name="foto" accept="image/*">
+                <input th:field="*{imagen}" type="text" id="foto" name="foto" accept="image/*" required>
             </div>
             <div>
                 <label for="enfermedad">Enfermedad:</label>
-                <input th:field="*{enfermedad}" type="text" id="enfermedad" name="enfermedad">
+                <input th:field="*{enfermedad}" type="text" id="enfermedad" name="enfermedad" required>
             </div>
             <div>
                 <label for="estado">Estado:</label>
@@ -76,8 +76,6 @@
                 <button id="button-registrar-mascota" type="submit">Registrar</button>
             </div>
         </form>
-
-
     </div>
 </main>
 </body>
