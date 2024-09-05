@@ -69,7 +69,7 @@
             <tr th:each="mascota : ${mascotas}" >
                 <td th:text="${mascota.nombre}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"></td>
                 <td th:text="${mascota.raza}" th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"></td>
-                <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"> <img id="imagen-dog" th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})} "></td>
+                    <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''"> <img id="imagen-dog" th:src="${mascota.imagen}"></td>
                 <td th:onclick="'window.location.href=\'/mascota/find/' + ${mascota.id} + '\''" th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></td>
                 <td>
                     <a id="editar" th:href="@{/mascota/editar/{id}(id=${mascota.id})}">editar</a>
