@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "clientes")
 public class Cliente {
-    private int cedula;
+    private Integer cedula;
     private String nombre;
     private String correo;
     private int celular;
@@ -24,14 +24,14 @@ public class Cliente {
         this.mascotasList = new ArrayList<>();
     }
 
-    public Cliente(int cedula, String nombre, String correo, int celular) {
+    public Cliente(Integer cedula, String nombre, String correo, int celular) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
         this.correo = correo;
         this.celular = celular;
     }
-    public Cliente(Long id, int cedula, String nombre, String correo, int celular) {
+    public Cliente(Long id, Integer cedula, String nombre, String correo, int celular) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -47,11 +47,11 @@ public class Cliente {
         this.id = id;
     }
 
-    public int getCedula() {
+    public Integer getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(Integer cedula) {
         this.cedula = cedula;
     }
 
