@@ -16,24 +16,22 @@
             <img id="logo-container" src="/css/tabla/img/logo.jpeg">
         </div>
         <ul id="menu">
-            <li><a href="/mascota/all">Lista Mascotas</a></li>
+            <li><a href="/mascota/registrar">Registrar Mascota</a></li>
         </ul>
         <div id="buttons">
             <a th:href="@{/mascotas/all}">
-                <button id="salir-button" onclick="location.href='/'">salir</button>
+                <button id="salir-button">salir</button>
             </a>
         </div>
     </nav>
 </header>
 <main>
-
     <div id="container">
         <div id="img-container">
-            <img th:src="@{/css/tabla/img/{imagen}(imagen=${mascota.getImagen()})}">
+            <img th:src="${mascota.imagen}">
         </div>
         <div id="data-container">
             <div id="names">
-                <div class="owner">Dueño: <span th:text="${mascota.dueño}"></span></div>
                 <div class="pet-name">Nombre: <span th:text="${mascota.nombre}"></span></div>
             </div>
             <div id="info-container">
@@ -42,11 +40,7 @@
                     <p>Edad: <span th:text="${mascota.edad}"></span> años</p>
                     <p>Peso: <span th:text="${mascota.peso}"></span> Kg</p>
                     <p>Enfermedad: <span th:text="${mascota.enfermedad}"></span></p>
-                    <p>Estado: <span th:text="${mascota.estado ? 'Activo' : 'Inactivo'}"></span></p>
-                </div>
-                <div class="treatments">
-                    <h3>Tratamientos</h3>
-                    <p th:text="${mascota.tratamientos}"></p>
+                    <p>Estado: <span th:text="${mascota.estado == 0 ? 'Inactivo' : 'Activo'}"></span></p>
                 </div>
             </div>
         </div>
