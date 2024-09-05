@@ -33,7 +33,7 @@
         <h1 class="registrar">Usuario</h1>
         <form th:object="${cliente}" th:action="@{/cliente/login}" method="post">
             <div>
-                <input th:field="*{cedula}" type="text" id="cedula" name="cedula" placeholder="Cédula" required minlength="10" value="">
+                <input th:field="*{cedula}" type="text" id="cedula" name="cedula" placeholder="Cédula" required minlength="10" >
             </div>
             <div class="button-registrar">
                 <button class="button-registrar2" type="submit">Ingresar</button>
