@@ -30,7 +30,7 @@ public class ClienteController {
 
     @GetMapping("/registrar")
     public String registrarCliente (Model model){
-        Cliente cliente = new Cliente(null,"","",0);
+        Cliente cliente = new Cliente(0,"","",0);
         model.addAttribute("cliente", cliente);
 
         return "crear_cliente";
@@ -57,7 +57,7 @@ public class ClienteController {
     }
     @GetMapping("/login")
     public String login(Model model){
-        Cliente cliente = new Cliente(null,"","",0);
+        Cliente cliente = new Cliente(0,"","",0);
         model.addAttribute("cliente", cliente);
         return "login";
     }
