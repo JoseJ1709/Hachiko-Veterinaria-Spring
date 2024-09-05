@@ -408,7 +408,7 @@ public class DatabaseInit implements ApplicationRunner {
         mascota68.setCliente(clienteLeonardo);
         mascotasRepository.save(mascota68);
 
-        Mascota mascota69 = new Mascota("Baxter", "Basset Hound", 6, 30, "Ning", true, "https://images.pexels.com/photos/1582835/pexels-photo-1582835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        Mascota mascota69 = new Mascota("Baxter", "Basset Hound", 6, 30, "Ning", true, "https://images.pexels.com/photos/1582835/pexels-photo-1582835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         mascota69.setCliente(clienteSophia);
         mascotasRepository.save(mascota69);
 
