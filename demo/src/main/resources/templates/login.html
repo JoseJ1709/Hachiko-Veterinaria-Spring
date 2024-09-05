@@ -16,7 +16,7 @@
             <img id="logo-container" src="/css/Form/img/logo.jpeg">
         </div>
         <ul id="menu">
-            <li><a href="/">Dashboard</a></li>
+            <li><a href="/cliente/registrar">Registrar</a></li>
         </ul>
         <div id="buttons">
             <button id="salir-button" onclick="location.href='/'">salir</button>
@@ -28,22 +28,33 @@
         <img id="centro1" src="/css/Form/img/centro1.png">
         <img id="centro2" src="/css/Form/img/centro2.png">
     </div>
-    <div id="forms">
-        <h1 id="registrar">Login</h1>
+    <div id="logins">
+    <div class="forms">
+        <h1 class="registrar">Usuario</h1>
         <form th:object="${cliente}" th:action="@{/cliente/login}" method="post">
             <div>
                 <input th:field="*{cedula}" type="text" id="cedula" name="cedula" placeholder="Cédula">
+            </div>
+            <div class="button-registrar">
+                <button class="button-registrar2" type="submit">Ingresar</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="forms">
+        <h1 class="registrar">Veterinario</h1>
+        <div>
+            <div>
+                <input type="text" id="cedula-v" name="cedula" placeholder="Cédula">
             </div>
             <div>
                 <input type="password" id="password" name="password" placeholder="Contraseña">
             </div>
             <div class="button-registrar">
-                <button id="button-registrar" type="submit">Ingresar</button>
+                <button class="button-registrar2" onclick="window.location.href='/mascota/all'">Ingresar</button>
             </div>
-            <div class="crear-cuenta">
-                <a href="/cliente/registrar">Crear cuenta</a>
-            </div>
-        </form>
+        </div>
+    </div>
     </div>
 </main>
 </body>

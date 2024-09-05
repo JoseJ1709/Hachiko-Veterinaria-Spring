@@ -103,7 +103,14 @@ header nav ul li a{
     right: 0;
     margin-top: 900px;
 }
-#forms {
+#logins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 100px;
+}
+.forms {
     background-color: rgba(255, 255, 255, 0.274);
     padding: 50px;
     border-radius: 15px;
@@ -111,20 +118,25 @@ header nav ul li a{
     margin: 0 auto;
 }
 
-#registrar {
+.registrar {
     font-size: 40px;
     color: #0863be;
     text-align: left;
     margin-bottom: 20px;
 }
 
-#forms form div {
+.forms form div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.forms div div {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 }
 
-#forms input {
+.forms input {
     background-color: #EAF0F7;
     border: 1px solid #EAF0F7;
     border-radius: 8px;
@@ -135,12 +147,13 @@ header nav ul li a{
     text-align: start;
 }
 
+
 .button-registrar {
     text-align: center;
     margin-top: 30px;
 }
 
-#button-registrar {
+.button-registrar2 {
     background-color: #3780ed;;
     width: 150px;
     height: 50px;
