@@ -57,7 +57,16 @@ public class DatabaseInit implements ApplicationRunner {
         Veterinario vet8 = new Veterinario("Dr. Rodriguez", "123463", "password8", "Geriatría", "foto8.jpg", 0);
         Veterinario vet9 = new Veterinario("Dr. Hernandez", "123464", "password9", "Endocrinología", "foto9.jpg", 0);
         Veterinario vet10 = new Veterinario("Dr. Lopez", "123465", "password10", "Nefrología", "foto10.jpg", 0);
-
+      Veterinario vet11 = new Veterinario("Dr. White", "123466", "password11", "Anestesiología", "foto11.jpg", 0);
+      Veterinario vet12 = new Veterinario("Dr. Green", "123467", "password12", "Patología", "foto12.jpg", 0);
+      Veterinario vet13 = new Veterinario("Dr. Black", "123468", "password13", "Radiología", "foto13.jpg", 0);
+      Veterinario vet14 = new Veterinario("Dr. Blue", "123469", "password14", "Toxicología", "foto14.jpg", 0);
+      Veterinario vet15 = new Veterinario("Dr. Gray", "123470", "password15", "Microbiología", "foto15.jpg", 0);
+      Veterinario vet16 = new Veterinario("Dr. Red", "123471", "password16", "Parasitología", "foto16.jpg", 0);
+      Veterinario vet17 = new Veterinario("Dr. Brown", "123472", "password17", "Inmunología", "foto17.jpg", 0);
+      Veterinario vet18 = new Veterinario("Dr. Purple", "123473", "password18", "Genética", "foto18.jpg", 0);
+      Veterinario vet19 = new Veterinario("Dr. Yellow", "123474", "password19", "Nutrición", "foto19.jpg", 0);
+      Veterinario vet20 = new Veterinario("Dr. Orange", "123475", "password20", "Epidemiología", "foto20.jpg", 0);
 
         vet1 = veterinariosRepository.save(vet1);
         vet2 = veterinariosRepository.save(vet2);
