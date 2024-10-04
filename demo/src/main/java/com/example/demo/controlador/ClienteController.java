@@ -46,7 +46,8 @@ public class ClienteController {
     clienteService.deleteById(identificacion);
   }
   @PutMapping("/editar/{id}")
-  public void editarCliente(@RequestBody Cliente cliente){
+  public void editarCliente(@RequestBody Cliente cliente
+  ){
     clienteService.update(cliente);
   }
 

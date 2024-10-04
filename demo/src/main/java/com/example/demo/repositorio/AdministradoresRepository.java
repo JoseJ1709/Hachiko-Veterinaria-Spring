@@ -12,5 +12,6 @@ import java.util.Map;
 
 @Repository
 public interface AdministradoresRepository extends JpaRepository<Administrador, Long> {
-
+    // select * from administradores where usuario = usuario and password = password
+    Administrador findByUsuarioAndPassword(String usuario, String password);
 }

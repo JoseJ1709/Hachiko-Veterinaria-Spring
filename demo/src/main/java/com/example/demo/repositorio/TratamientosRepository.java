@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface TratamientosRepository extends JpaRepository<Tratamiento, Long> {
 
-    List<Tratamiento> findByMascotaId(Long mascotaId);
-
+    List<Tratamiento> findByVeterinarioId(Long id);
+    List<Tratamiento> findByMascotaId(Long id);
     @Modifying
     @Query("DELETE FROM Tratamiento t WHERE t.mascota.id = :mascotaId")
     void deleteByMascotaId(Long mascotaId);

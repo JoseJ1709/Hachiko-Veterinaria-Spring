@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface VeterinariosRepository extends JpaRepository<Veterinario, Long> {
+    // select * from veterinarios where cedula = cedula
 }
