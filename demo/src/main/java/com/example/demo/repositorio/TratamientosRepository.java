@@ -6,9 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TratamientosRepository extends JpaRepository<Tratamiento, Long> {
 
+    List<Tratamiento> findByMascotaId(Long mascotaId);
 
     @Modifying
     @Query("DELETE FROM Tratamiento t WHERE t.mascota.id = :mascotaId")

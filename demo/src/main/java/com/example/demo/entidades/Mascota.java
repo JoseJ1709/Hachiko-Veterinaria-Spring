@@ -1,5 +1,6 @@
 package com.example.demo.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
@@ -24,9 +25,11 @@ public class Mascota {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     private Cliente cliente;
 
     @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Tratamiento> tratamientosList;
 
     public Mascota(Long id, String nombre, String raza, int edad, int peso, String enfermedad, boolean estado, String imagen) {

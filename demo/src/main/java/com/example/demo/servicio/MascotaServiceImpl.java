@@ -1,6 +1,7 @@
 package com.example.demo.servicio;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.example.demo.entidades.Cliente;
 import com.example.demo.repositorio.ClientesRepository;
@@ -35,7 +36,7 @@ public class MascotaServiceImpl implements MascotaService{
     }
 
     @Override
-    public Collection<Mascota> findAll() {
+    public List<Mascota> findAll() {
         return mascotasRepository.findAll();
     }
 

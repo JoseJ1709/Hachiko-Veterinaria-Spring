@@ -1,5 +1,6 @@
 package com.example.demo.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public class Cliente {
     @Id
     @GeneratedValue
     private Long id;
-
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Mascota> mascotasList;
 
     public Cliente() {

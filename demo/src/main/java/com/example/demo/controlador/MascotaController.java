@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequestMapping("/mascota")
-@Controller
+@RestController
+@CrossOrigin(origins = "localhost:4200")
 public class MascotaController {
     @Autowired
     MascotaService mascotaService;
@@ -19,14 +22,25 @@ public class MascotaController {
     ClientesRepository clientesRepository;
 
     @GetMapping("/all")
-    public String allMascotas(Model model){
-        model.addAttribute("mascotas", mascotaService.findAll());
-        return "mascotas";
+    public List<Mascota> allMascotas(Model model){
+        return mascotaService.findAll();
     }
     @GetMapping("/find/{id}")
-    public String findMascota(Model model,@PathVariable("id") Long identificacion){
-        model.addAttribute("mascota", mascotaService.findById(identificacion));
-        return "mascota";
+    public Mascota findMascota(Model model,@PathVariable("id") Long identificacion){
+        Mascota mascota = mascotaService.findById(identificacion);
+        return mascota;
+    }
+    @PostMapping("/agregar")
+    public void agregarMascota(@RequestBody Mascota mascota, @RequestParam("clienteId") Long clienteId){
+      mascotaService.add(mascota, clienteId);
+    }
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminarMascota(@PathVariable("id") Long identificacion){
+      mascotaService.deleteById(identificacion);
+    }
+    @PutMapping("/editar/{id}")
+    public void  editarMascota(@RequestBody Mascota mascota, @RequestParam("clienteId") Long clienteId){
+      mascotaService.update(mascota, clienteId);
     }
     @GetMapping("/registrar")
     public String registrarMascota(Model model){
@@ -36,25 +50,12 @@ public class MascotaController {
 
         return "crear_mascota";
     }
-    @PostMapping("/agregar")
-    public String agregarMascota(@ModelAttribute("mascota") Mascota mascota, @RequestParam("clienteId") Long clienteId) {
-        mascotaService.add(mascota, clienteId);
-        return "redirect:/mascota/all";
-    }
-    @GetMapping("/eliminar/{id}")
-    public String eliminarMascota(@PathVariable("id") Long identificacion){
-        mascotaService.deleteById(identificacion);
-        return "redirect:/mascota/all";
-    }
+
     @GetMapping("/editar/{id}")
     public String editarMascota(Model model,@PathVariable("id") Long identificacion){
         model.addAttribute("mascota",  mascotaService.findById(identificacion));
         model.addAttribute("clientes", clientesRepository.findAll());
         return "editar_mascota";
     }
-    @PostMapping("/editar/{id}")
-    public String editarMascota(@PathVariable("id") int identificacion, @ModelAttribute("mascota") Mascota mascota, @RequestParam("clienteId") Long clienteId) {
-        mascotaService.update(mascota, clienteId);
-        return "redirect:/mascota/all";
-    }
+
 }

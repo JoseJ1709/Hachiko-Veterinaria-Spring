@@ -78,6 +78,16 @@ public class DatabaseInit implements ApplicationRunner {
         vet8 = veterinariosRepository.save(vet8);
         vet9 = veterinariosRepository.save(vet9);
         vet10 = veterinariosRepository.save(vet10);
+        vet11 = veterinariosRepository.save(vet11);
+        vet12 = veterinariosRepository.save(vet12);
+        vet13 = veterinariosRepository.save(vet13);
+        vet14 = veterinariosRepository.save(vet14);
+        vet15 = veterinariosRepository.save(vet15);
+        vet16 = veterinariosRepository.save(vet16);
+        vet17 = veterinariosRepository.save(vet17);
+        vet18 = veterinariosRepository.save(vet18);
+        vet19 = veterinariosRepository.save(vet19);
+        vet20 = veterinariosRepository.save(vet20);
 
 
         Droga droga1 = new Droga("Droga A", 100, 150, 50, 0);
