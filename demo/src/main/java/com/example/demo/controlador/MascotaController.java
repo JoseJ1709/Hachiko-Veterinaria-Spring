@@ -4,6 +4,8 @@ import com.example.demo.entidades.Cliente;
 import com.example.demo.entidades.Mascota;
 import com.example.demo.repositorio.ClientesRepository;
 import com.example.demo.servicio.MascotaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,7 @@ import java.util.List;
 
 @RequestMapping("/mascota")
 @RestController
-@CrossOrigin(origins = "localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MascotaController {
     @Autowired
     MascotaService mascotaService;
@@ -30,7 +32,7 @@ public class MascotaController {
         Mascota mascota = mascotaService.findById(identificacion);
         return mascota;
     }
-    @PostMapping("/agregar")
+    @PostMapping("/agregar/{clienteId}")
     public void agregarMascota(@RequestBody Mascota mascota, @RequestParam("clienteId") Long clienteId){
       mascotaService.add(mascota, clienteId);
     }

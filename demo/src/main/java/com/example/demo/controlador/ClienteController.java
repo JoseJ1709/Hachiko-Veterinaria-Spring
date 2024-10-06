@@ -19,7 +19,7 @@ import java.util.List;
   * @Controller
  */
 @RestController
-@CrossOrigin(origins = "localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ClienteController {
   @Autowired
   ClienteService clienteService;
@@ -31,6 +31,10 @@ public class ClienteController {
   @GetMapping("/all")
   public List<Cliente> allClientes() {
     return clienteService.findAll();
+  }
+  @GetMapping("/find/{id}")
+  public Cliente findCliente(@PathVariable("id") Long identificacion){
+    return clienteService.findById(identificacion);
   }
   @GetMapping("/mascotas/{id}")
   public List<Mascota> mascotasCliente(@PathVariable("id") Long id, Model model){
