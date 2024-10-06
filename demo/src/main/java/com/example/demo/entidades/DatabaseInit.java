@@ -1,6 +1,7 @@
 package com.example.demo.entidades;
 
 import com.example.demo.repositorio.*;
+import com.example.demo.servicio.DrogaService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,6 +13,8 @@ import java.sql.Date;
 @Controller
 @Transactional
 public class DatabaseInit implements ApplicationRunner {
+    @Autowired
+    DrogaService drogaService;
 
     @Autowired
     MascotasRepository mascotasRepository;
@@ -102,7 +105,7 @@ public class DatabaseInit implements ApplicationRunner {
         droga4 = drogasRepository.save(droga4);
         droga5 = drogasRepository.save(droga5);
 
-
+        drogaService.cargarDrogras();
 
         Cliente clienteJuan = clientesRepository.save(new Cliente(1023242547, "Juan", "juan@gmail.com", 310254334));
         Cliente clientePedro = clientesRepository.save(new Cliente(1023242548, "Pedro", "pedro@gmail.com", 310254335));
