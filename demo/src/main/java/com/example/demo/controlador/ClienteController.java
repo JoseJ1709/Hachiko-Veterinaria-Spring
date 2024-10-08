@@ -54,6 +54,12 @@ public class ClienteController {
   ){
     clienteService.update(cliente);
   }
+  @GetMapping("/login/{cedula}")
+  public Cliente login(@PathVariable("cedula") Integer cedula){
+    Cliente cliente = clientesRepository.findByCedula(cedula);
+
+    return cliente;
+  }
 
   @GetMapping("/registrar")
   public String registrarCliente (Model model){
@@ -68,12 +74,6 @@ public class ClienteController {
       return "editar_cliente";
   }
 
-  @GetMapping("/login")
-  public String login(Model model){
-      Cliente cliente = new Cliente(0,"","",0);
-      model.addAttribute("cliente", cliente);
-      return "login";
-  }
   @PostMapping("/login")
   public String login(@ModelAttribute("cliente") Cliente cliente, Model model){
       Cliente foundCliente = clientesRepository.findByCedula(cliente.getCedula());
