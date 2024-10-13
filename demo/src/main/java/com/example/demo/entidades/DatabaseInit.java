@@ -50,12 +50,12 @@ public class DatabaseInit implements ApplicationRunner {
         administradoresRepository.save(admin4);
         administradoresRepository.save(admin5);
 
-        Veterinario vet1 = new Veterinario("Dr. Smith", "123456", "password1", "Cardiología", "foto1.jpg", 0);
-        Veterinario vet2 = new Veterinario("Dr. Johnson", "123457", "password2", "Dermatología", "foto2.jpg", 0);
-        Veterinario vet3 = new Veterinario("Dr. Williams", "123458", "password3", "Neurología", "foto3.jpg", 0);
-        Veterinario vet4 = new Veterinario("Dr. Brown", "123459", "password4", "Oncología", "foto4.jpg", 0);
-        Veterinario vet5 = new Veterinario("Dr. Jones", "123460", "password5", "Pediatría", "foto5.jpg", 0);
-        Veterinario vet6 = new Veterinario("Dr. Garcia", "123461", "password6", "Cirugía", "foto6.jpg", 0);
+        Veterinario vet1 = new Veterinario("Dr. Smith", "123456", "password1", "Cardiología", "foto1.jpg", 2);
+        Veterinario vet2 = new Veterinario("Dr. Johnson", "123457", "password2", "Dermatología", "foto2.jpg", 4);
+        Veterinario vet3 = new Veterinario("Dr. Williams", "123458", "password3", "Neurología", "foto3.jpg", 10);
+        Veterinario vet4 = new Veterinario("Dr. Brown", "123459", "password4", "Oncología", "foto4.jpg", 3);
+        Veterinario vet5 = new Veterinario("Dr. Jones", "123460", "password5", "Pediatría", "foto5.jpg", 5);
+        Veterinario vet6 = new Veterinario("Dr. Garcia", "123461", "password6", "Cirugía", "foto6.jpg", 7);
         Veterinario vet7 = new Veterinario("Dr. Martinez", "123462", "password7", "Oftalmología", "foto7.jpg", 0);
         Veterinario vet8 = new Veterinario("Dr. Rodriguez", "123463", "password8", "Geriatría", "foto8.jpg", 0);
         Veterinario vet9 = new Veterinario("Dr. Hernandez", "123464", "password9", "Endocrinología", "foto9.jpg", 0);

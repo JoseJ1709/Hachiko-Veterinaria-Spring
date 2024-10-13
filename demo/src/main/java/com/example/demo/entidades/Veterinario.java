@@ -11,7 +11,7 @@ public class Veterinario {
     private String contraseña;
     private String especialidad;
     private String foto;
-    private int num_ateciones;
+    private int num_atenciones;
 
     @Id
     @GeneratedValue
@@ -22,17 +22,17 @@ public class Veterinario {
     }
 
 
-    @OneToMany(mappedBy = "veterinario")
+    @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tratamiento> tratamientosList;
 
-    public Veterinario(Long id, String nombre, String cedula, String contraseña, String especialidad, String foto, int num_ateciones) {
+    public Veterinario(Long id, String nombre, String cedula, String contraseña, String especialidad, String foto, int num_atenciones) {
         this.id = id;
         this.nombre = nombre;
         this.cedula = cedula;
         this.contraseña = contraseña;
         this.especialidad = especialidad;
         this.foto = foto;
-        this.num_ateciones = num_ateciones;
+        this.num_atenciones = num_atenciones;
     }
 
     public Veterinario() {
@@ -44,7 +44,7 @@ public class Veterinario {
         this.contraseña = contraseña;
         this.especialidad = especialidad;
         this.foto = foto;
-        this.num_ateciones = num_ateciones;
+        this.num_atenciones = num_ateciones;
     }
 
     public void setId(Long id) {
@@ -91,11 +91,11 @@ public class Veterinario {
         this.foto = foto;
     }
 
-    public int getNum_ateciones() {
-        return num_ateciones;
+    public int getNum_atenciones() {
+        return num_atenciones;
     }
 
-    public void setNum_ateciones(int num_ateciones) {
-        this.num_ateciones = num_ateciones;
+    public void setNum_atenciones(int num_ateciones) {
+        this.num_atenciones = num_ateciones;
     }
 }

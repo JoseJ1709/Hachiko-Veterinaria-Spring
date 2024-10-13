@@ -8,10 +8,11 @@ import java.sql.Date;
 public class Tratamiento {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "veterinario_id")
     private Veterinario veterinario;
 
     @ManyToOne

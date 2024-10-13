@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequestMapping("/veterinario")
 @RestController
-@CrossOrigin(origins = "localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class VeterinarioController {
   @Autowired
   VeterinarioService veterinarioService;
@@ -20,8 +20,9 @@ public class VeterinarioController {
   }
 
   @GetMapping("/find/{id}")
-  public Veterinario findVeterinario(Long id) {
-    return veterinarioService.findById(id);
+  public Veterinario findVeterinario( @PathVariable("id") Long identificacion) {
+    Veterinario veterinario = veterinarioService.findById(identificacion);
+    return veterinario;
   }
 
   @PostMapping("/agregar")

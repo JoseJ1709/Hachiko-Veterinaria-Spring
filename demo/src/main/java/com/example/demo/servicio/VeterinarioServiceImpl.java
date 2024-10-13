@@ -18,6 +18,7 @@ public class VeterinarioServiceImpl implements VeterinarioService {
   @Autowired
   private MascotasRepository mascotasRepository;
 
+
   @Override
   public Veterinario findById(Long id) {
     return veterinariosRepository.findById(id).get();
@@ -44,7 +45,7 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     existingVeterinario.setContraseña(veterinario.getContraseña());
     existingVeterinario.setEspecialidad(veterinario.getEspecialidad());
     existingVeterinario.setFoto(veterinario.getFoto());
-    existingVeterinario.setNum_ateciones(veterinario.getNum_ateciones());
+    existingVeterinario.setNum_atenciones(veterinario.getNum_atenciones());
 
     return veterinariosRepository.save(existingVeterinario);
   }
