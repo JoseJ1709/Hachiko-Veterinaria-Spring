@@ -1,5 +1,6 @@
 package com.example.demo.servicio;
 
+import com.example.demo.entidades.Droga;
 import com.example.demo.entidades.Tratamiento;
 import com.example.demo.repositorio.TratamientosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ import java.util.List;
 public class TratamientoServiceImpl implements TratamientoService{
   @Autowired
   private TratamientosRepository tratamientosRepository;
+
+  @Autowired
+  private DrogaService drogaService;
 
   @Override
   public Tratamiento findById(Long id) {
@@ -34,7 +38,10 @@ public class TratamientoServiceImpl implements TratamientoService{
 
   @Override
   public void add(Tratamiento tratamiento) {
+    Droga droga = tratamiento.getDroga();
+    droga.venderUnidades(1);
     tratamientosRepository.save(tratamiento);
+    drogaService.update(droga);
   }
 
   @Override

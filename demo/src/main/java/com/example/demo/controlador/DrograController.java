@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequestMapping("/droga")
 @RestController
-@CrossOrigin(origins = "localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class DrograController {
 
     @Autowired

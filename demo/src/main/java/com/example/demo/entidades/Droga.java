@@ -86,4 +86,12 @@ public class Droga {
     public void setId(Long id) {
         this.id = id;
     }
+  public void venderUnidades(int cantidad) {
+    if (cantidad <= uni_disponibles) {
+      this.uni_disponibles -= cantidad;
+      this.uni_vendidas += cantidad;
+    } else {
+      throw new IllegalArgumentException("No hay suficientes unidades disponibles");
+    }
+  }
 }

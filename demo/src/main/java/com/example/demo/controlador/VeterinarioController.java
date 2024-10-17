@@ -1,6 +1,7 @@
 package com.example.demo.controlador;
 
 import com.example.demo.entidades.Veterinario;
+import com.example.demo.repositorio.VeterinariosRepository;
 import com.example.demo.servicio.VeterinarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,8 @@ import java.util.List;
 public class VeterinarioController {
   @Autowired
   VeterinarioService veterinarioService;
+  @Autowired
+  VeterinariosRepository veterinariosRepository;
 
   @GetMapping("/all")
   public List<Veterinario> allVeterinarios() {
@@ -22,6 +25,12 @@ public class VeterinarioController {
   @GetMapping("/find/{id}")
   public Veterinario findVeterinario( @PathVariable("id") Long identificacion) {
     Veterinario veterinario = veterinarioService.findById(identificacion);
+    return veterinario;
+  }
+
+  @GetMapping("/login/{cedula}")
+  public Veterinario login(@PathVariable("cedula") String cedula) {
+    Veterinario veterinario = veterinariosRepository.findByCedula(cedula);
     return veterinario;
   }
 
