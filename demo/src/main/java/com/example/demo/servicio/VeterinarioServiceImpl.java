@@ -54,4 +54,9 @@ public class VeterinarioServiceImpl implements VeterinarioService {
   public void add(Veterinario veterinario) {
     veterinariosRepository.save(veterinario);
   }
+
+  @Override
+  public Veterinario findByCedula(String cedula) {
+    return veterinariosRepository.findByCedula(cedula);
+  }
 }

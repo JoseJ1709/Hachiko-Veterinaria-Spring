@@ -93,11 +93,11 @@ public class DatabaseInit implements ApplicationRunner {
         vet20 = veterinariosRepository.save(vet20);
 
 
-        Droga droga1 = new Droga("Droga A", 100, 150, 50, 0);
-        Droga droga2 = new Droga("Droga B", 200, 250, 30, 0);
-        Droga droga3 = new Droga("Droga C", 300, 350, 20, 0);
-        Droga droga4 = new Droga("Droga D", 400, 450, 10, 0);
-        Droga droga5 = new Droga("Droga E", 500, 550, 5, 0);
+        Droga droga1 = new Droga("Droga A", 100, 150, 50, 10);
+        Droga droga2 = new Droga("Droga B", 200, 250, 30, 5);
+        Droga droga3 = new Droga("Droga C", 300, 350, 20, 20);
+        Droga droga4 = new Droga("Droga D", 400, 450, 10, 4);
+        Droga droga5 = new Droga("Droga E", 500, 550, 5, 2);
 
         droga1 = drogasRepository.save(droga1);
         droga2 = drogasRepository.save(droga2);
@@ -542,19 +542,19 @@ public class DatabaseInit implements ApplicationRunner {
         mascota96.setCliente(clienteHarper);
         mascotasRepository.save(mascota96);
 
-        Mascota mascota97 = new Mascota("Ella", "Wirehaired Vizsla", 4, 29, "Ning", true, "https://images.pexels.com/photos/19221918/pexels-photo-19221918/free-photo-of-water-dripping-from-the-wet-muzzle-of-a-dog-standing-in-a-river-in-winter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        Mascota mascota97 = new Mascota("Ella", "Wirehaired Vizsla", 4, 29, "Ning", false, "https://images.pexels.com/photos/19221918/pexels-photo-19221918/free-photo-of-water-dripping-from-the-wet-muzzle-of-a-dog-standing-in-a-river-in-winter.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         mascota97.setCliente(clienteAlexander);
         mascotasRepository.save(mascota97);
 
-        Mascota mascota98 = new Mascota("Chief", "Perro de Agua Español", 2, 21, "Ning", true, "https://images.pexels.com/photos/9111572/pexels-photo-9111572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        Mascota mascota98 = new Mascota("Chief", "Perro de Agua Español", 2, 21, "Ning", false, "https://images.pexels.com/photos/9111572/pexels-photo-9111572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         mascota98.setCliente(clienteEvelyn);
         mascotasRepository.save(mascota98);
 
-        Mascota mascota99 = new Mascota("Ace", "Norwich Terrier", 3, 5, "Ning", true, "https://images.pexels.com/photos/7210283/pexels-photo-7210283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        Mascota mascota99 = new Mascota("Ace", "Norwich Terrier", 3, 5, "Ning", false, "https://images.pexels.com/photos/7210283/pexels-photo-7210283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         mascota99.setCliente(clienteDaniel);
         mascotasRepository.save(mascota99);
 
-        Mascota mascota100 = new Mascota("Zelda", "Belgian Laekenois", 4, 27, "Ning", true, "https://images.pexels.com/photos/5431404/pexels-photo-5431404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        Mascota mascota100 = new Mascota("Zelda", "Belgian Laekenois", 4, 27, "Ning", false, "https://images.pexels.com/photos/5431404/pexels-photo-5431404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         mascota100.setCliente(clienteScarlett);
         mascotasRepository.save(mascota100);
 
@@ -620,6 +620,8 @@ public class DatabaseInit implements ApplicationRunner {
         tratamiento10.setDroga(droga5);
         tratamiento10.setMascota(mascota10);
         tratamientosRepository.save(tratamiento10);
+
+
 
     }
 

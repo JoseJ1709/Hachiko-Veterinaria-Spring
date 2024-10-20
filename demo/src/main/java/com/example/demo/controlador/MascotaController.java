@@ -20,9 +20,6 @@ public class MascotaController {
     @Autowired
     MascotaService mascotaService;
 
-    @Autowired
-    ClientesRepository clientesRepository;
-
     @GetMapping("/all")
     public List<Mascota> allMascotas(Model model){
         return mascotaService.findAll();
@@ -44,20 +41,6 @@ public class MascotaController {
     public void  editarMascota(@RequestBody Mascota mascota, @RequestParam("clienteId") Long clienteId){
       mascotaService.update(mascota, clienteId);
     }
-    @GetMapping("/registrar")
-    public String registrarMascota(Model model){
-        Mascota mascota = new Mascota("","",0,0,"",false,"");
-        model.addAttribute("mascota", mascota);
-        model.addAttribute("clientes", clientesRepository.findAll());
 
-        return "crear_mascota";
-    }
-
-    @GetMapping("/editar/{id}")
-    public String editarMascota(Model model,@PathVariable("id") Long identificacion){
-        model.addAttribute("mascota",  mascotaService.findById(identificacion));
-        model.addAttribute("clientes", clientesRepository.findAll());
-        return "editar_mascota";
-    }
 
 }

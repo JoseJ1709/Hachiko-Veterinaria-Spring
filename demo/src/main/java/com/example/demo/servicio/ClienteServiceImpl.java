@@ -36,27 +36,32 @@ public class ClienteServiceImpl implements ClienteService {
         clientesRepository.deleteById(id);
     }
 
-    @Override
-    public Cliente update(Cliente cliente) {
-        Cliente existingCliente = clientesRepository.findById(cliente.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Cliente not found"));
+  @Override
+  public Cliente update(Cliente cliente) {
+    Cliente existingCliente = clientesRepository.findById(cliente.getId())
+      .orElseThrow(() -> new EntityNotFoundException("Cliente not found"));
 
-        existingCliente.setNombre(cliente.getNombre());
-        existingCliente.setCedula(cliente.getCedula());
-        existingCliente.setCorreo(cliente.getCorreo());
-        existingCliente.setCelular(cliente.getCelular());
+    existingCliente.setNombre(cliente.getNombre());
+    existingCliente.setCedula(cliente.getCedula());
+    existingCliente.setCorreo(cliente.getCorreo());
+    existingCliente.setCelular(cliente.getCelular());
 
-        // Use helper methods to manage the collection
-        existingCliente.getMascotasList().clear();
-        for (Mascota mascota : cliente.getMascotasList()) {
-            existingCliente.addMascota(mascota);
-        }
+    List<Mascota> existingMascotas = existingCliente.getMascotasList();
+    List<Mascota> updatedMascotas = cliente.getMascotasList();
 
-        return clientesRepository.save(existingCliente);
+    for (Mascota updatedMascota : updatedMascotas) {
+      if (!existingMascotas.contains(updatedMascota)) {
+        existingCliente.addMascota(updatedMascota);
+      }
     }
+
+    return clientesRepository.save(existingCliente);
+  }
 
     @Override
     public void add(Cliente cliente) {
         clientesRepository.save(cliente);
     }
+
+
 }

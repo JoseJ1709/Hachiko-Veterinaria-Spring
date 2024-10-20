@@ -14,8 +14,6 @@ import java.util.List;
 public class VeterinarioController {
   @Autowired
   VeterinarioService veterinarioService;
-  @Autowired
-  VeterinariosRepository veterinariosRepository;
 
   @GetMapping("/all")
   public List<Veterinario> allVeterinarios() {
@@ -30,7 +28,7 @@ public class VeterinarioController {
 
   @GetMapping("/login/{cedula}")
   public Veterinario login(@PathVariable("cedula") String cedula) {
-    Veterinario veterinario = veterinariosRepository.findByCedula(cedula);
+    Veterinario veterinario = veterinarioService.findByCedula(cedula);
     return veterinario;
   }
 
