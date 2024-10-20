@@ -24,9 +24,8 @@ public class ClienteController {
   @Autowired
   ClienteService clienteService;
   @Autowired
-  private MascotasRepository mascotasRepository;
-  @Autowired
-  private ClientesRepository clientesRepository;
+  MascotaService mascotaService;
+
 
   @GetMapping("/all")
   public List<Cliente> allClientes() {
@@ -38,7 +37,7 @@ public class ClienteController {
   }
   @GetMapping("/mascotas/{id}")
   public List<Mascota> mascotasCliente(@PathVariable("id") Long id, Model model){
-    List<Mascota> mascotas = mascotasRepository.findByCliente_Id(id);
+    List<Mascota> mascotas = mascotaService.findByCliente_Id(id);
     return mascotas;
   }
   @PostMapping("/agregar")
@@ -56,7 +55,7 @@ public class ClienteController {
   }
   @GetMapping("/login/{cedula}")
   public Cliente login(@PathVariable("cedula") Integer cedula){
-    Cliente cliente = clientesRepository.findByCedula(cedula);
+    Cliente cliente = clienteService.findByCedula(cedula);
 
     return cliente;
   }
@@ -76,11 +75,11 @@ public class ClienteController {
 
   @PostMapping("/login")
   public String login(@ModelAttribute("cliente") Cliente cliente, Model model){
-      Cliente foundCliente = clientesRepository.findByCedula(cliente.getCedula());
+      Cliente foundCliente = clienteService.findByCedula(cliente.getCedula());
       if (foundCliente == null) {
           throw new NotFoundException(cliente.getCedula());
       }
-      Cliente cliente1 = clientesRepository.findByCedula(cliente.getCedula());
+      Cliente cliente1 = clienteService.findByCedula(cliente.getCedula());
       if(cliente1.getCedula() == cliente.getCedula()){
           Long id = cliente1.getId();
           return "redirect:/cliente/mascotas/"+id;

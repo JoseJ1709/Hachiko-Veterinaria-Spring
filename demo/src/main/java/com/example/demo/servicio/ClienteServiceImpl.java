@@ -63,5 +63,8 @@ public class ClienteServiceImpl implements ClienteService {
         clientesRepository.save(cliente);
     }
 
-
+  @Override
+  public Cliente findByCedula(int cedula) {
+    return clientesRepository.findByCedula(cedula);
+  }
 }

@@ -68,4 +68,9 @@ public class MascotaServiceImpl implements MascotaService{
         mascota.setCliente(cliente);
         mascotasRepository.save(mascota);
     }
+
+    @Override
+    public List<Mascota> findByCliente_Id(Long idCliente) {
+        return mascotasRepository.findByCliente_Id(idCliente);
+    }
 }

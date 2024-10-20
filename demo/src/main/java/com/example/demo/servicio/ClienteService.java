@@ -11,4 +11,5 @@ public interface ClienteService {
     public void deleteById(Long id);
     public Cliente update(Cliente cliente);
     public void add(Cliente cliente);
+    public Cliente findByCedula(int cedula);
 }
