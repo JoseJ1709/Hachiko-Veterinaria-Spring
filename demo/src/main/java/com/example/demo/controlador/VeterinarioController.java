@@ -26,10 +26,15 @@ public class VeterinarioController {
     return veterinario;
   }
 
-  @GetMapping("/login/{cedula}")
-  public Veterinario login(@PathVariable("cedula") String cedula) {
+  @GetMapping("/login/{cedula}/{contrasena}")
+  public Veterinario login(@PathVariable("cedula") String cedula , @PathVariable("contrasena") String contrasena) {
     Veterinario veterinario = veterinarioService.findByCedula(cedula);
-    return veterinario;
+    if(veterinario.getContraseña().equals(contrasena)){
+      return veterinario;
+    }
+    else {
+      return null;
+    }
   }
 
   @PostMapping("/agregar")
