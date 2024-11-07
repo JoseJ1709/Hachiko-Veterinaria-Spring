@@ -1,10 +1,18 @@
 package com.example.demo.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
+@Builder
+@AllArgsConstructor
 @Table(name = "drogas")
 public class Droga {
     private String nombre;
@@ -28,8 +36,7 @@ public class Droga {
         this.uni_vendidas = uni_vendidas;
     }
 
-    public Droga() {
-    }
+
 
     public Droga(String nombre, int precio_compra, int precio_venta, int uni_disponibles, int uni_vendidas) {
         this.nombre = nombre;
@@ -39,53 +46,7 @@ public class Droga {
         this.uni_vendidas = uni_vendidas;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getPrecio_compra() {
-        return precio_compra;
-    }
-
-    public void setPrecio_compra(int precio_compra) {
-        this.precio_compra = precio_compra;
-    }
-
-    public int getPrecio_venta() {
-        return precio_venta;
-    }
-
-    public void setPrecio_venta(int precio_venta) {
-        this.precio_venta = precio_venta;
-    }
-
-    public int getUni_disponibles() {
-        return uni_disponibles;
-    }
-
-    public void setUni_disponibles(int uni_disponibles) {
-        this.uni_disponibles = uni_disponibles;
-    }
-
-    public int getUni_vendidas() {
-        return uni_vendidas;
-    }
-
-    public void setUni_vendidas(int uni_vendidas) {
-        this.uni_vendidas = uni_vendidas;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
   public void venderUnidades(int cantidad) {
     if (cantidad <= uni_disponibles) {
       this.uni_disponibles -= cantidad;

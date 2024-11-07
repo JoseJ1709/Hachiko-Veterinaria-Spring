@@ -1,9 +1,13 @@
 package com.example.demo.controlador;
 
+import com.example.demo.DTOs.VeterinarioDTO;
+import com.example.demo.DTOs.VeterinarioMapper;
 import com.example.demo.entidades.Veterinario;
 import com.example.demo.repositorio.VeterinariosRepository;
 import com.example.demo.servicio.VeterinarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,20 +30,29 @@ public class VeterinarioController {
     return veterinario;
   }
 
+
   @GetMapping("/login/{cedula}/{contrasena}")
-  public Veterinario login(@PathVariable("cedula") String cedula , @PathVariable("contrasena") String contrasena) {
+  public ResponseEntity<VeterinarioDTO> login(@PathVariable("cedula") String cedula, @PathVariable("contrasena") String contrasena) {
     Veterinario veterinario = veterinarioService.findByCedula(cedula);
-    if(veterinario.getContraseña().equals(contrasena)){
-      return veterinario;
+    if (veterinario != null && veterinario.getContraseña().equals(contrasena)) {
+        VeterinarioDTO veterinarioDTO = VeterinarioMapper.INSTANCE.convert(veterinario);
+        return new ResponseEntity<>(veterinarioDTO, HttpStatus.OK);
+    } else {
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
-    else {
-      return null;
-    }
-  }
+}
 
   @PostMapping("/agregar")
-  public void agregarVeterinario(@RequestBody Veterinario veterinario) {
-    veterinarioService.add(veterinario);
+  public ResponseEntity agregarVeterinario(@RequestBody Veterinario veterinario) {
+    Veterinario newVeterinario = veterinarioService.add(veterinario);
+    VeterinarioDTO veterinarioDTO = VeterinarioMapper.INSTANCE.convert(newVeterinario);
+
+    if (newVeterinario == null) {
+      return new ResponseEntity<String>("user Not found", HttpStatus.BAD_REQUEST);
+      
+    }
+
+    return new ResponseEntity<VeterinarioDTO>(veterinarioDTO, HttpStatus.CREATED);
   }
 
   @DeleteMapping("/eliminar/{id}")

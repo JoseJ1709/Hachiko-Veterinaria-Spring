@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 
+
 import java.sql.Date;
 
 @Controller
@@ -94,12 +95,14 @@ public class DatabaseInit implements ApplicationRunner {
         vet19 = veterinariosRepository.save(vet19);
         vet20 = veterinariosRepository.save(vet20);
 
+        
+        Droga droga1 = new Droga().builder().nombre("Droga A").precio_compra(100).precio_venta(150).uni_disponibles(150).uni_vendidas(50).build();
+        Droga droga2 = new Droga().builder().nombre("Droga B").precio_compra(200).precio_venta(250).uni_disponibles(100).uni_vendidas(30).build();
+        Droga droga3 = new Droga().builder().nombre("Droga C").precio_compra(300).precio_venta(350).uni_disponibles(20).uni_vendidas(20).build();
+        Droga droga4 = new Droga().builder().nombre("Droga D").precio_compra(400).precio_venta(450).uni_disponibles(10).uni_vendidas(4).build();
+        Droga droga5 = new Droga().builder().nombre("Droga E").precio_compra(500).precio_venta(550).uni_disponibles(5).uni_vendidas(2).build();
 
-        Droga droga1 = new Droga("Droga A", 100, 150, 50, 10);
-        Droga droga2 = new Droga("Droga B", 200, 250, 30, 5);
-        Droga droga3 = new Droga("Droga C", 300, 350, 20, 20);
-        Droga droga4 = new Droga("Droga D", 400, 450, 10, 4);
-        Droga droga5 = new Droga("Droga E", 500, 550, 5, 2);
+
 
         droga1 = drogasRepository.save(droga1);
         droga2 = drogasRepository.save(droga2);

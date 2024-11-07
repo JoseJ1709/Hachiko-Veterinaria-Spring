@@ -2,10 +2,12 @@ package com.example.demo.servicio;
 
 import com.example.demo.entidades.Droga;
 import com.example.demo.repositorio.DrogasRepository;
-import org.apache.poi.ss.usermodel.Row;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.FileInputStream;
 import java.util.List;
 import org.apache.poi.ss.usermodel.*;
@@ -46,11 +48,14 @@ public class DrogaServiceImpl implements DrogaService {
 
     @Override
     public void cargarDrogras() throws IOException {
-      FileInputStream file = new FileInputStream("/home/jose/Universidad/Web/Proyecto/Hachiko-Veterinaria-Spring/demo/src/main/resources/static/MEDICAMENTOS_VETERINARIA.xlsx");
-      Workbook workbook = new XSSFWorkbook(file);
-      Sheet sheet = workbook.getSheetAt(0);
+    ClassPathResource resource = new ClassPathResource("static/MEDICAMENTOS_VETERINARIA.xlsx");
+    List<Droga> listaDrogas = new ArrayList<>();
+    Sheet sheet;
 
-      List<Droga> listaDrogas = new ArrayList<>();
+    try (InputStream file = resource.getInputStream()) {
+        Workbook workbook = new XSSFWorkbook(file);
+        sheet = workbook.getSheetAt(0);
+    
 
       for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
         Row row = sheet.getRow(i);
@@ -69,5 +74,6 @@ public class DrogaServiceImpl implements DrogaService {
       workbook.close();
       file.close();
     }
+}
 
 }

@@ -9,6 +9,6 @@ public interface VeterinarioService {
     public List<Veterinario> findAll();
     public void deleteById(Long id);
     public Veterinario update(Veterinario veterinario);
-    public void add(Veterinario veterinario);
+    public Veterinario add(Veterinario veterinario);
     public Veterinario findByCedula(String cedula);
 }

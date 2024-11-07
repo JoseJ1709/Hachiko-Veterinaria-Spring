@@ -2,11 +2,15 @@ package com.example.demo.entidades;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "clientes")
 public class Cliente {
     private int cedula;
@@ -21,9 +25,6 @@ public class Cliente {
     @JsonIgnore
     private List<Mascota> mascotasList;
 
-    public Cliente() {
-        this.mascotasList = new ArrayList<>();
-    }
 
     public Cliente(int cedula, String nombre, String correo, int celular) {
         this.cedula = cedula;
@@ -39,53 +40,8 @@ public class Cliente {
         this.celular = celular;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public int getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public int getCelular() {
-        return celular;
-    }
-
-    public void setCelular(int celular) {
-        this.celular = celular;
-    }
-
-    public List<Mascota> getMascotasList() {
-        return mascotasList;
-    }
-
-    public void setMascotasList(List<Mascota> mascotasList) {
-        this.mascotasList = mascotasList;
-    }
 
     public void addMascota(Mascota mascota) {
     }

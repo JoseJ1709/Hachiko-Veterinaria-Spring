@@ -1,9 +1,14 @@
 package com.example.demo.entidades;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "veterinarios")
 public class Veterinario {
     private String nombre;
@@ -35,8 +40,6 @@ public class Veterinario {
         this.num_atenciones = num_atenciones;
     }
 
-    public Veterinario() {
-    }
 
     public Veterinario(String nombre, String cedula, String contraseña, String especialidad, String foto, int num_ateciones) {
         this.nombre = nombre;
@@ -47,55 +50,4 @@ public class Veterinario {
         this.num_atenciones = num_ateciones;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public int getNum_atenciones() {
-        return num_atenciones;
-    }
-
-    public void setNum_atenciones(int num_ateciones) {
-        this.num_atenciones = num_ateciones;
-    }
 }
